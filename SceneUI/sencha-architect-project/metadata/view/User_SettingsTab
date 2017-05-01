@@ -1,0 +1,69 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "user_settingstab",
+        "designer|userClassName": "User_SettingsTab"
+    },
+    "configAlternates": {
+        "title": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyContainer2",
+    "designerId": "51c34cf8-bc16-4442-8413-76856aa488f0",
+    "viewControllerInstanceId": "6c3fc7db-a07e-449f-8f0b-1663d859a7e7",
+    "viewModelInstanceId": "b2109fd2-85fd-4433-8147-34c5095a4a1e",
+    "cn": [
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "mybutton3",
+                "text": "Logout"
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "text": "string"
+            },
+            "name": "MyButton3",
+            "designerId": "fd0379c1-a510-49f9-b25d-915fab757005",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMybutton3Tap",
+                        "implHandler": [
+                            "FB.logout(function(response) {",
+                            "   // Person is now logged out",
+                            "\tExt.query('#ext-user_settingstab-1', false)[0].component.fireEvent( 'logoutSuccess' );",
+                            "",
+                            "});"
+                        ],
+                        "name": "tap"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string"
+                    },
+                    "name": "onMybutton3Tap",
+                    "designerId": "9deb12bc-9ccb-45da-bb1d-f1455a1821d9"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<!-- @author Eva Kuntz -->
+<head>
+<title>Request Admin Account</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<style>
+body {
+	font-family: calibri
+}
+</style>
+</head>
+
+<body>
+<h1>Request Admin Account</h1>
+All information is required.<p></p>
+
+Name: <input type="text" id="name"></input><br>
+Email: <input type="text" id="email"></input><br>
+Password: <input type="password" id="password"></input><br>
+Confirm Password: <input type="password" id="passwordConfirm"></input><br>
+<button type="button" id="submit">Request Account</button>
+
+</body>
+
+<script>
+$(document).ready(function(){
+
+	$("#submit").click(function(){
+		var info = {name:document.getElementById("name").value,email:document.getElementById("email").value, password:document.getElementById("password").value,passwordConfirm:document.getElementById("passwordConfirm").value};
+		$.ajax({
+			type: 'POST',
+			data: info,
+			dataType: 'json',
+			url: '/scenerequest/request_admin_account',
+			success: function(data){
+				//console.log(data);
+				if(data.success === true){
+					window.alert("You request is now pending!");
+					window.location.href = "login.html";
+				}
+			},
+			error: function(data){
+				console.log(data);
+			}
+		});
+
+	});
+
+})	
+
+</script>
+
+</html>

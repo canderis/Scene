@@ -1,0 +1,898 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "loginpanel",
+        "designer|userClassName": "LoginPanel",
+        "hidden": null,
+        "html": null,
+        "itemId": "LoginPanel",
+        "layout": "vbox"
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "html": "string",
+        "itemId": "string",
+        "layout": "string",
+        "hidden": "boolean"
+    },
+    "designerId": "9c0494db-f7b1-4dfc-a5bb-df0a5850b41e",
+    "configMeta": {
+        "html": {
+            "bindDeep": true
+        }
+    },
+    "viewControllerInstanceId": "13ea6ff5-cf5d-4a98-ae27-3aaff6df0278",
+    "viewModelInstanceId": "d1e41027-9cac-4bfa-8623-37a38da9126d",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onContainerInitialize",
+                "implHandler": [
+                    "",
+                    "var me = this;",
+                    "",
+                    "me.up().mask();",
+                    "",
+                    "var panel = this;",
+                    "window.fbAsyncInit = function() {",
+                    "    FB.init({",
+                    "\t\tappId\t: '1832851696981861',",
+                    "\t\txfbml\t: true,",
+                    "\t\tversion\t: 'v2.8',",
+                    "    });",
+                    "\tFB.AppEvents.logPageView();",
+                    "",
+                    "\t//FB.getLoginStatus(function(response) {",
+                    "\t//\tconsole.log('panel', response);",
+                    "\t//\tpanel.handleFacebookLogin(response);",
+                    "    //});",
+                    "",
+                    "",
+                    "",
+                    "\t};",
+                    "",
+                    "  (function(d, s, id){",
+                    "     var js, fjs = d.getElementsByTagName(s)[0];",
+                    "     if (d.getElementById(id)) {",
+                    "\t\t return;",
+                    "\t }",
+                    "     js = d.createElement(s); js.id = id;",
+                    "     js.src = \"//connect.facebook.net/en_US/sdk.js\";",
+                    "     fjs.parentNode.insertBefore(js, fjs);",
+                    "",
+                    "   }(document, 'script', 'facebook-jssdk'));",
+                    "",
+                    "if (navigator.geolocation) {",
+                    "\tnavigator.geolocation.getCurrentPosition(function(position){",
+                    "\t\t//console.log(position);",
+                    "\t\tme.position = position;",
+                    "\t\tme.up().unmask();",
+                    "\t}, function(error){",
+                    "\t\tme.position = {};",
+                    "\t\tme.position.coords = {};",
+                    "\t\tme.position.coords.latitude = 42.022773799999996;",
+                    "\t\tme.position.coords.longitude = -93.6480002;",
+                    "",
+                    "",
+                    "\t\t//console.log('here');",
+                    "\t\tExt.Msg.alert('Geolocation Error', \"This app requires location services. \");",
+                    "\t\t//console.log(error);",
+                    "",
+                    "\t\tme.up().unmask();",
+                    "\t});",
+                    "}",
+                    "",
+                    "//",
+                    "",
+                    "//setTimeout(function(){",
+                    "\t//console.log(\"here\");",
+                    "//\t;"
+                ],
+                "name": "initialize"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onContainerInitialize",
+            "designerId": "fc9bdf7b-cd70-46e7-bae4-944af985534b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "response"
+                ],
+                "fn": "handleFacebookLogin",
+                "implHandler": [
+                    "FBStatus = response;",
+                    "//console.log(response);",
+                    "if (FBStatus.status === 'connected'){",
+                    "\t//console.log(\"logged in\");",
+                    "\tAERP.Ajax.request(",
+                    "\t{",
+                    "\t\turl:'/SceneRequest/handleFacebookLogin',",
+                    "\t\tparams: {",
+                    "\t\t\tsigned_request:\tresponse.authResponse.signedRequest,",
+                    "\t\t\ttoken:\t\t\tresponse.authResponse.accessToken,",
+                    "\t\t\tlatitude: this.position.coords.latitude,\t\t//42.0278208,",
+                    "\t\t\tlongitude:this.position.coords.longitude\t\t//-93.64894819999999",
+                    "\t\t},",
+                    "\t\tsuccess:function(response) {",
+                    "\t\t\t//console.log(response);",
+                    "\t\t\tthis.loadNewPage(response);",
+                    "\t\t\t/*",
+                    "\t\t\tif(!this.mainViewPanel){",
+                    "\t\t\t\tthis.mainViewPanel = Ext.create('Scene.view.MainView');",
+                    "\t\t\t}",
+                    "",
+                    "\t\t\t//accountInfo = response.data.accountInfo;",
+                    "\t\t\t//this.mainViewPanel.accountInfo = response.data;",
+                    "\t\t\tthis.mainViewPanel.loginPanel = this;",
+                    "\t\t\tthis.mainViewPanel.loadSuggestedList(response.data.userInfo, response.data.suggestedList);",
+                    "\t\t\tExt.Viewport.add(this.mainViewPanel);",
+                    "\t\t\tExt.Viewport.setActiveItem(this.mainViewPanel);",
+                    "\t\t\t*/",
+                    "",
+                    "\t\t},",
+                    "\t\tfailure:function(response) {",
+                    "",
+                    "\t\t},",
+                    "\t\tscope:this",
+                    "\t});",
+                    "}",
+                    "else if (FBStatus.status === 'not_authorized') {",
+                    "\t//console.log(\"not authorized\");",
+                    "}",
+                    "else{",
+                    "\t//console.log('unknown',response);",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "handleFacebookLogin",
+            "designerId": "864bbbca-2347-4f6b-8d1a-77adccd8ae93"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "response"
+                ],
+                "fn": "loadNewPage",
+                "implHandler": [
+                    "if(!this.mainViewPanel){",
+                    "\tthis.mainViewPanel = Ext.create('Scene.view.MainView');",
+                    "}",
+                    "",
+                    "//accountInfo = response.data.accountInfo;",
+                    "//this.mainViewPanel.accountInfo = response.data;",
+                    "this.mainViewPanel.loginPanel = this;",
+                    "this.mainViewPanel.loadSuggestedList(response.data.userInfo, response.data.suggestedList, response.data.interestedList );",
+                    "Ext.Viewport.add(this.mainViewPanel);",
+                    "Ext.Viewport.setActiveItem(this.mainViewPanel);"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "loadNewPage",
+            "designerId": "282a1fee-30a3-481f-9d22-a7430116f0ca"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "mybutton4",
+                "text": "getLocation"
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "text": "string",
+                "hidden": "boolean"
+            },
+            "name": "MyButton4",
+            "designerId": "8646c8a2-c214-4a2f-b080-ab82b5a3ce02",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMybutton4Tap",
+                        "implHandler": [
+                            "//if (navigator.geolocation) {",
+                            "//\tnavigator.geolocation.getCurrentPosition(function(position){",
+                            "//\t\tconsole.log(position);",
+                            "//\t});",
+                            "//}",
+                            "/*",
+                            "console.log({",
+                            "\taccuracy:46",
+                            "\t,altitude:null",
+                            "\t,altitudeAccuracy:null",
+                            "\t,heading:null",
+                            "\t,latitude:42.0278208",
+                            "\t,longitude:-93.64894819999999",
+                            "\t,speed:null",
+                            "});",
+                            "*/"
+                        ],
+                        "name": "tap"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string"
+                    },
+                    "name": "onMybutton4Tap",
+                    "designerId": "58f01b93-3b39-45ba-8f77-3866bdddf3a2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "itemId": "titleBar",
+                "title": "Scene"
+            },
+            "configAlternates": {
+                "docked": "string",
+                "title": "string",
+                "itemId": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "87a376d7-1ff6-40c1-b1cc-889ee3b8adc1",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "backButton",
+                        "text": "<"
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton14",
+                    "designerId": "3f56986a-9529-4ced-82b1-8ae9e37475d6",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton14Tap",
+                                "implHandler": [
+                                    "this.queryById('createAccountForm').hide();",
+                                    "this.queryById('loginForm').hide();",
+                                    "this.queryById('mainButtons').show();",
+                                    "button.hide();"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onMybutton14Tap",
+                            "designerId": "4cc3c07e-6634-43dc-b231-ecc97d31fe43"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": null,
+                "itemId": "mainButtons",
+                "layout": "fit"
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "layout": "string",
+                "hidden": "boolean"
+            },
+            "name": "MyContainer9",
+            "designerId": "d79b8bef-2899-4c95-8fa4-ac8814285dc1",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "facebookLogin",
+                        "text": "Login With Facebook"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "4b3100ee-40ef-4e39-a81d-030d41c95d69",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton2Tap",
+                                "implHandler": [
+                                    "var me = this;",
+                                    "",
+                                    "FB.login(",
+                                    "\tfunction(response){",
+                                    "\t\tme.handleFacebookLogin(response);",
+                                    "\t},",
+                                    "\t{scope: 'public_profile,email'}",
+                                    ");"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onMybutton2Tap",
+                            "designerId": "a76630bc-7aba-4d12-a7b4-f571a5c58fc7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "login_ui_btn",
+                        "text": "Login"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton9",
+                    "designerId": "f792a6ca-5154-4194-b111-7e905ea99314",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton9Tap",
+                                "implHandler": [
+                                    "this.queryById('backButton').show();",
+                                    "this.queryById('mainButtons').hide();",
+                                    "this.queryById('loginForm').show();"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onMybutton9Tap",
+                            "designerId": "86538462-bc32-49a2-8b37-08e112d6a6a3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "createAccountUIBtn",
+                        "text": "Create Account"
+                    },
+                    "configAlternates": {
+                        "itemId": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton12",
+                    "designerId": "543e2975-0b89-4783-ad55-f2b4499ef36e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton12Tap",
+                                "implHandler": [
+                                    "this.queryById('backButton').show();",
+                                    "this.queryById('mainButtons').hide();",
+                                    "this.queryById('createAccountForm').show();"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onMybutton12Tap",
+                            "designerId": "e6a3e4a9-3f74-46e8-aad8-29edcaf17886"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "loginForm",
+                "layout": "vbox",
+                "margin": "5px"
+            },
+            "configAlternates": {
+                "hidden": "boolean",
+                "itemId": "string",
+                "layout": "string",
+                "margin": "auto"
+            },
+            "name": "MyContainer10",
+            "designerId": "7727f6e1-cc6d-480a-b975-e3dfefb1d44a",
+            "cn": [
+                {
+                    "type": "Ext.field.Email",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "itemId": "email_login",
+                        "label": "Email",
+                        "placeHolder": "email@example.com"
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "label": "string",
+                        "placeHolder": "string"
+                    },
+                    "name": "MyEmailField1",
+                    "designerId": "ebc30253-3119-4aa1-8980-8ea4a2ff145b"
+                },
+                {
+                    "type": "Ext.field.Password",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "itemId": "pass_login",
+                        "label": "Password"
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "label": "string"
+                    },
+                    "name": "MyPasswordField2",
+                    "designerId": "8e665eeb-65f1-4473-9ede-b1593331e686"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "itemId": "loginBtn",
+                        "text": "Login"
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton10",
+                    "designerId": "0826973a-8dc5-4aae-91bd-5de5fd36d562",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onLoginBtnTap",
+                                "implHandler": [
+                                    "AERP.Ajax.request({",
+                                    "\turl:'/SceneRequest/handleNonFacebookLogin',",
+                                    "\tparams: {",
+                                    "\t\temail: this.queryById('email_login').getValue(),",
+                                    "\t\tpass: this.queryById('pass_login').getValue(),",
+                                    "\t\tlatitude: this.position.coords.latitude,\t\t//42.0278208,",
+                                    "\t\tlongitude:this.position.coords.longitude\t\t//-93.64894819999999",
+                                    "\t",
+                                    "\t},",
+                                    "\tsuccess:function(response) {",
+                                    "\t\t//console.log(response);",
+                                    "\t\tthis.loadNewPage(response);",
+                                    "\t},",
+                                    "\tfailure:function(response) {",
+                                    "",
+                                    "\t},",
+                                    "\tscope:this",
+                                    "});"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onLoginBtnTap",
+                            "designerId": "f1249887-b23d-4223-908d-9280a5eafe8f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "createAccountForm",
+                "layout": "vbox",
+                "margin": "5px"
+            },
+            "configAlternates": {
+                "hidden": "boolean",
+                "itemId": "string",
+                "layout": "string",
+                "margin": "auto"
+            },
+            "name": "MyContainer11",
+            "designerId": "55ca8be7-d438-4479-876d-84559b667923",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "itemId": "nameField",
+                        "label": "Name"
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "label": "string"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "b7959f61-8841-4926-a43e-707fb43b98d2"
+                },
+                {
+                    "type": "Ext.field.Select",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "itemId": "ageField",
+                        "label": "Age",
+                        "options": [
+                            "[",
+                            "\t {text: \"<18\",value: \"-18\"}",
+                            "\t,{text: \"18 - 20\",value: \"18 - 20\"}",
+                            "\t,{text: \"21 - 25\",value: \"21 - 25\"}",
+                            "\t,{text: \"25 - 29\",value: \"25 - 29\"}",
+                            "\t,{text: \"30+\",value: \"30+\"}",
+                            "]"
+                        ]
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "label": "string",
+                        "options": "array"
+                    },
+                    "name": "MySelectField",
+                    "designerId": "bf37f42b-4929-4f75-ace7-b431944fd51f"
+                },
+                {
+                    "type": "Ext.field.Email",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "itemId": "email",
+                        "label": "Email",
+                        "placeHolder": "email@example.com"
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "label": "string",
+                        "placeHolder": "string"
+                    },
+                    "name": "MyEmailField",
+                    "designerId": "d2634a3f-414d-4567-a411-d26247ade5db"
+                },
+                {
+                    "type": "Ext.field.Password",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "itemId": "pass",
+                        "label": "Password"
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "label": "string"
+                    },
+                    "name": "MyPasswordField",
+                    "designerId": "62eb79f6-7d49-45bd-9402-755ae7835447"
+                },
+                {
+                    "type": "Ext.field.Password",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "itemId": "passConf",
+                        "label": "Confirm Password"
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "label": "string"
+                    },
+                    "name": "MyPasswordField1",
+                    "designerId": "bf54a1d2-4d57-493a-a04e-2c78dad5c013"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": null,
+                        "itemId": "createBtn",
+                        "text": "Create Account"
+                    },
+                    "configAlternates": {
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton13",
+                    "designerId": "4368b107-4e93-4b71-9e2d-b03cd30f32f3",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCreateBtnTap",
+                                "implHandler": [
+                                    "var password = this.queryById('pass').getValue();",
+                                    "var passwordConf = this.queryById('passConf').getValue();",
+                                    "if(password !== passwordConf){",
+                                    "\tExt.Msg.alert('Passwords do not match!', \"Please retry your passwords.\");",
+                                    "\treturn;",
+                                    "}",
+                                    "AERP.Ajax.request({",
+                                    "\turl:'/SceneRequest/createUserAccount',",
+                                    "\tparams: {",
+                                    "\t\tname: this.queryById('nameField').getValue(),",
+                                    "\t\tage: this.queryById('ageField').getValue(),",
+                                    "\t\temail: this.queryById('email').getValue(),",
+                                    "\t\tpassword:password,",
+                                    "\t\tpasswordConfirm:passwordConf",
+                                    "\t},",
+                                    "\tsuccess:function(response) {",
+                                    "\t\t//console.log(response.data);",
+                                    "\t\tthis.userId = response.data.id;",
+                                    "\t\tthis.queryById('createAccountForm').hide();",
+                                    "\t\tthis.queryById('titleBar').hide();",
+                                    "\t\tthis.queryById('profileCreationForm').show();",
+                                    "\t},",
+                                    "\tfailure:function(response) {",
+                                    "\t\t//console.log('here',response);",
+                                    "\t},",
+                                    "\tscope:this",
+                                    "});"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onCreateBtnTap",
+                            "designerId": "9fcdcabc-4bed-4673-bec7-4bcea74c026e"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "profileCreationForm"
+            },
+            "configAlternates": {
+                "hidden": "boolean",
+                "itemId": "string"
+            },
+            "name": "profilecreationform",
+            "designerId": "9a184d76-54ff-4a5d-87ed-3a5c3b308b64",
+            "masterInstanceId": "5328e755-f9d3-4cb2-9f56-3040c41b8307",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "profile"
+                        ],
+                        "fn": "onFormpanelFinishedProfile",
+                        "implHandler": [
+                            "AERP.Ajax.request({",
+                            "\turl:'/SceneRequest/submitProfile',",
+                            "\tparams:{",
+                            "\t\tdata:JSON.stringify(profile),",
+                            "\t\tuserId:this.userId,",
+                            "\t\tlatitude: this.position.coords.latitude,\t\t//42.0278208,",
+                            "\t\tlongitude:this.position.coords.longitude\t\t//-93.64894819999999",
+                            "\t},success:function(response) {",
+                            "\t\tthis.loadNewPage(response);",
+                            "",
+                            "\t},",
+                            "\tfailure:function(response) {",
+                            "",
+                            "\t},",
+                            "\tscope:this",
+                            "});",
+                            "//"
+                        ],
+                        "name": "finishedProfile"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string"
+                    },
+                    "name": "onFormpanelFinishedProfile",
+                    "designerId": "1ec2cc50-e0c6-4449-b0d3-4cfc145951cb"
+                }
+            ]
+        }
+    ]
+}

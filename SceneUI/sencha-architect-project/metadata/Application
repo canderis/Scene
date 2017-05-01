@@ -1,0 +1,26 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "name": "Scene",
+        "views": [
+            "LoginPanel",
+            "User_SuggestedTab",
+            "MainView",
+            "SuggestedListItem",
+            "User_SettingsTab",
+            "SceneInfoPanel",
+            "ProfileCreationForm"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "views": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Account</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="createUserAccount.js"></script>
+<style>
+body{
+font-family:calibri}
+.error {
+color: #FF0000}
+</style>
+</head>
+
+<body>
+<h1>Create Account</h1>
+<b>All fields are required.</b><br>
+<p></p>
+	<div id="form">
+		Name:<br>
+		<input type="text" name="name" id="name"></input>
+		<span class="error"><p id="nameError"></p></span>
+		Age:<br>
+		<select name="age" id="age">
+			<option value="-18"><18</option>
+			<option value="18-21">18-21</option>
+			<option value="21-25">21-25</option>
+			<option value="26-29">26-29</option>
+			<option value="30+">30+</option>
+		  </select><br>
+		Email:<br>
+		<input type="text" name="email" id="email"></input>
+		<span class="error"><p id="emailError"></p></span>
+		Password:<br>
+		<input type="password" name="password" id="password"></input>
+		<span class="error"><p id="passError"></p></span>
+		Confirm Password:<br>
+		<input type="password" name="passwordConfirm" id="passwordConfrim"></input>
+		<span class="error"><p id="passError2"></p></span>
+		<!--<button type="button" id="next">Next</button>-->
+		<button type="button" onclick="createAccount()">Next</button>
+	</div>
+</body>
+
+</html>

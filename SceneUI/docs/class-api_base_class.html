@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class api_base_class</title>
+
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-api_base_class.html">api_base_class</a></li>
+				<li><a href="class-bandsintown_api.html">bandsintown_api</a></li>
+				<li><a href="class-mapquest_api.html">mapquest_api</a></li>
+				<li><a href="class-Scene.html">Scene</a></li>
+				<li><a href="class-yelp_api.html">yelp_api</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class api_base_class</h1>
+
+
+	<div class="description">
+	<p>api_base_class.php
+api_base_class is an abstract class that provides helper funtions used for talking to various APIs and
+defines functions Scene.php relies on existing for prepairing a data object for the client.</p>
+
+<p>This was created to modularize the API calls, allowing them to be added easier without breaking existing code
+or requiring extensive modification.</p>
+
+<p>The construct funtion should prepare the $raw_data_object before the prep_api_array is called.</p>
+	</div>
+
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-bandsintown_api.html">bandsintown_api</a>, 
+			<a href="class-mapquest_api.html">mapquest_api</a>, 
+			<a href="class-yelp_api.html">yelp_api</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br>
+		
+		
+		
+
+				<b>Author:</b>
+				Scott Huffman.<br>
+			<b>Located at</b> <a href="source-class-api_base_class.html#2-94" title="Go to source code">api_classes/api_base_class.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="prep_api_array" id="_prep_api_array">
+
+		<td class="attributes"><code>
+			abstract protected 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prep_api_array">#</a>
+		<code><a href="source-class-api_base_class.html#34-38" title="Go to source code">prep_api_array</a>( )</code>
+
+		<div class="description short">
+			<p>this function is called by the constructor.
+this function should prepare the associative array, mapped using the address, with the relevant data.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>this function is called by the constructor.
+this function should prepare the associative array, mapped using the address, with the relevant data.</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_prepped_data_array" id="_get_prepped_data_array">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_prepped_data_array">#</a>
+		<code><a href="source-class-api_base_class.html#40-47" title="Go to source code">get_prepped_data_array</a>( )</code>
+
+		<div class="description short">
+			<p>Getter funtion for prepped_data_array.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Getter funtion for prepped_data_array.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>prepped_data_array
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Scott Huffman<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="httpGet" id="_httpGet">
+
+		<td class="attributes"><code>
+			 protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_httpGet">#</a>
+		<code><a href="source-class-api_base_class.html#49-64" title="Go to source code">httpGet</a>( <span>string <var>$url</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that makes httpGet request from php (server)
+using CURL</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that makes httpGet request from php (server)
+using CURL</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$url</var></dt>
+					<dd>to make GET request too</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>response from the GET request
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="stripExtraCharacters" id="_stripExtraCharacters">
+
+		<td class="attributes"><code>
+			 protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_stripExtraCharacters">#</a>
+		<code><a href="source-class-api_base_class.html#67-79" title="Go to source code">stripExtraCharacters</a>( <span>string <var>$string</var></span> )</code>
+
+		<div class="description short">
+			<p>Function to strip extra white space, commas, and set to lower case.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function to strip extra white space, commas, and set to lower case.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$string</var></dt>
+					<dd>string or key that needs to be formatted</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>a properly formatted string
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Kevin Mathes<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="mergeApiArrays" id="_mergeApiArrays">
+
+		<td class="attributes"><code>
+			 protected static
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_mergeApiArrays">#</a>
+		<code><a href="source-class-api_base_class.html#81-93" title="Go to source code">mergeApiArrays</a>( <span>array <var>$api_base_classes</var></span> )</code>
+
+		<div class="description short">
+			<p>A function that will take a number of api arrays (to be specified later) in order
+to create on master array of events or locations. This function takes the
+different data segments from each api and will create space for all of them in the
+master array. Any element that cannot be found will be set to null.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>A function that will take a number of api arrays (to be specified later) in order
+to create on master array of events or locations. This function takes the
+different data segments from each api and will create space for all of them in the
+master array. Any element that cannot be found will be set to null.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$api_base_classes</var></dt>
+					<dd>array of api_base_class objects</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>an array master array containing all necessary data
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Kevin Mathes<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="raw_data_object" id="$raw_data_object">
+		<td class="attributes"><code>
+			protected  
+			
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-api_base_class.html#18-21" title="Go to source code"><var>$raw_data_object</var></a>
+
+			<div class="description short">
+				<p>$raw_data_object is a store for whatever data the API passes back</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$raw_data_object is a store for whatever data the API passes back</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$raw_data_object" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="prepped_data_array" id="$prepped_data_array">
+		<td class="attributes"><code>
+			protected  
+			
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-api_base_class.html#22-25" title="Go to source code"><var>$prepped_data_array</var></a>
+
+			<div class="description short">
+				<p>$prepped_data_array is a store data processed and formatted appropriatly.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>$prepped_data_array is a store data processed and formatted appropriatly.</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$prepped_data_array" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

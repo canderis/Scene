@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Homepage</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<style>
+body {
+	font-family: calibri
+}
+</style>
+</head>
+
+<body>
+<h1>Welcome Admin</h1>
+What do you want to do?<p></p>
+
+<div id="actions">
+<a href="manageProfileCategories.html"><button type="button">Manage Profile Categories</button></a>
+<a href="manageUsers.html"><button type="button">Manage Users</button></a>
+<a href="manageCompanyUsers.html"><button type="button">Manage Company Users</button></a>
+<button type="button" id="logout">Logout</button><br>
+</div>
+
+</body>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#logout").click(function(){
+		if(window.confirm("Do you really wish to logout?")){
+			window.location.href = "login.html";
+		}
+	});
+})
+</script>
+
+</html>

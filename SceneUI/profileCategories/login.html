@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<!-- @author Eva Kuntz -->
+<head>
+<title>Admin Login</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<style>
+body {
+	font-family: calibri
+}
+.error{
+	color: red;
+}
+</style>
+</head>
+
+
+<body>
+<h1>Welcome Admin</h1>
+
+<div id="loginDiv">
+Don't have an admin account? Request an admin account <a href="createAdminAccount.html">here</a>.
+<span class="error"><p id="error"></p></span>
+
+Email: <input type="text" id="username"></input><br>
+Password: <input type="password" id="password"></input><br>
+<button type="button" id="login">Login</button>
+</div>
+
+</body>
+
+
+<script>
+$(document).ready(function(){
+	document.getElementById("error").innerHTML = "";
+
+	$("#login").click(function(){		
+		
+		var info = {username:document.getElementById("username").value, password:document.getElementById("password").value,account_type:3};
+		
+		$.ajax({
+			type: 'POST',
+			data: info,
+			dataType: 'json',
+			url: '/scenerequest/user_login_no_fb',
+			success: function(data){
+				console.log(data);
+				if(data.success === true){
+					document.getElementById("error").innerHTML = "";
+					window.location.href = "homepage.html";
+				}else{
+					document.getElementById("error").innerHTML = "Email/Password combination is incorrect.";
+				}
+			},
+			error: function(data){
+				console.log(data);
+			}
+		});
+
+	});
+
+})
+</script>
+</html>

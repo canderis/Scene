@@ -1,0 +1,98 @@
+{
+    "type": "Ext.dataview.ListItem",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "suggestedlistitem",
+        "designer|userClassName": "SuggestedListItem",
+        "height": "160px",
+        "layout": "vbox",
+        "padding": null
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "padding": "auto"
+    },
+    "name": "MyListItem",
+    "designerId": "487b39b0-423c-403b-a7a8-302c4c6b55ae",
+    "viewControllerInstanceId": "006bd200-6c46-4183-9f11-003bc9dba24e",
+    "viewModelInstanceId": "a97d4f94-5b44-4377-b439-81e770c17132",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "updateRecord",
+                "implHandler": [
+                    "// Provide an implementation to update this container's child items"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "updateRecord",
+            "designerId": "6c110b58-c1fe-4dd4-bcf0-4713e11a63b9"
+        },
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": null,
+                "height": null,
+                "html": "This is an image",
+                "itemId": "imageContainer",
+                "layout|flex": null,
+                "maxHeight": 100,
+                "minHeight": 100
+            },
+            "configAlternates": {
+                "border": "boolean",
+                "height": "auto",
+                "html": "string",
+                "itemId": "string",
+                "layout|flex": "number",
+                "maxHeight": "auto",
+                "minHeight": "auto"
+            },
+            "name": "MyComponent",
+            "designerId": "40a186a0-30f3-4d60-8c6f-b5a051a9a396"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": "Name | Location",
+                "layout|flex": 1
+            },
+            "configAlternates": {
+                "html": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyContainer3",
+            "designerId": "5ebc108f-407d-4d98-b4ca-8957eac08897"
+        }
+    ]
+}

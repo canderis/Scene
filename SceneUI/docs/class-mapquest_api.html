@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class mapquest_api</title>
+
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-api_base_class.html">api_base_class</a></li>
+				<li><a href="class-bandsintown_api.html">bandsintown_api</a></li>
+				<li class="active"><a href="class-mapquest_api.html">mapquest_api</a></li>
+				<li><a href="class-Scene.html">Scene</a></li>
+				<li><a href="class-yelp_api.html">yelp_api</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class mapquest_api</h1>
+
+
+	<div class="description">
+	<p>Mapquest API Class
+Contains functions and constructor
+related to the Mapquest API searches.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-api_base_class.html"><span>api_base_class</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>mapquest_api</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+				<b>Author:</b>
+				Eva Kuntz<br>
+			<b>Located at</b> <a href="source-class-mapquest_api.html#5-327" title="Go to source code">api_classes/mapquest_api.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-mapquest_api.html#25-54" title="Go to source code">__construct</a>( <span>integer <var>$latitude</var></span>, <span> <var>$longitude</var></span> )</code>
+
+		<div class="description short">
+			<p>Constructor for MapQuest API object</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructor for MapQuest API object</p>
+
+<p>Takes a latitude and longitude argument
+and performs a mapquest search based on the lat/lng
+arguments given.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$latitude</var></dt>
+					<dd>latitude</dd>
+					<dt><var>$longitude</var></dt>
+					<dd>longitude</dd>
+				</dl></div>
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="merge_prepped_array" id="_merge_prepped_array">
+
+		<td class="attributes"><code>
+			 private 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_merge_prepped_array">#</a>
+		<code><a href="source-class-mapquest_api.html#56-73" title="Go to source code">merge_prepped_array</a>( )</code>
+
+		<div class="description short">
+			<p>Function that merges the filtered results from
+the mapquest nearby search.
+Makes sure resulting array is in a usable form</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that merges the filtered results from
+the mapquest nearby search.
+Makes sure resulting array is in a usable form</p>
+
+
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="prep_array" id="_prep_array">
+
+		<td class="attributes"><code>
+			 private 
+
+			filtered
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prep_array">#</a>
+		<code><a href="source-class-mapquest_api.html#75-124" title="Go to source code">prep_array</a>( <span>array <var>$array</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that prepares and filters each mapquest
+search array. If search did not return any results,
+return null and do not include in the final, prepped data
+array. Otherwise, filter and return the prepped array, before merging
+results into the prepped data array object.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that prepares and filters each mapquest
+search array. If search did not return any results,
+return null and do not include in the final, prepped data
+array. Otherwise, filter and return the prepped array, before merging
+results into the prepped data array object.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$array</var></dt>
+					<dd>filter and format</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					filtered<br>array
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="prep_api_array" id="_prep_api_array">
+
+		<td class="attributes"><code>
+			 private 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prep_api_array">#</a>
+		<code><a href="source-class-mapquest_api.html#126-162" title="Go to source code">prep_api_array</a>( )</code>
+
+		<div class="description short">
+			<p>Function that prepares raw data and puts it into a prepped array. Takes
+the address elements and parses them into a key that will be used to
+represent an event or location, in an associative array. Then adds each
+element that is deemed important inside of the array with its own key.
+Different cases may be used depending upon the what api requires
+Nothing is returned or taken as parameters, just modified.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that prepares raw data and puts it into a prepped array. Takes
+the address elements and parses them into a key that will be used to
+represent an event or location, in an associative array. Then adds each
+element that is deemed important inside of the array with its own key.
+Different cases may be used depending upon the what api requires
+Nothing is returned or taken as parameters, just modified.</p>
+
+
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Kevin Mathes<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createAddressKey" id="_createAddressKey">
+
+		<td class="attributes"><code>
+			 private 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createAddressKey">#</a>
+		<code><a href="source-class-mapquest_api.html#164-177" title="Go to source code">createAddressKey</a>( )</code>
+
+		<div class="description short">
+			<p>Function that creates the key the prep api function.
+Parses all of the address data</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that creates the key the prep api function.
+Parses all of the address data</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>formatted address key
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Kevin Mathes<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validateLocation" id="_validateLocation">
+
+		<td class="attributes"><code>
+			 private 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validateLocation">#</a>
+		<code><a href="source-class-mapquest_api.html#179-188" title="Go to source code">validateLocation</a>( <span>string <var>$location</var></span> )</code>
+
+		<div class="description short">
+			<p>Function to validate location and format location.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function to validate location and format location.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$location</var></dt>
+					<dd>to format</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>formatted location
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLatLng" id="_getLatLng">
+
+		<td class="attributes"><code>
+			 private 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLatLng">#</a>
+		<code><a href="source-class-mapquest_api.html#191-203" title="Go to source code">getLatLng</a>( <span>string <var>$location</var></span> )</code>
+
+		<div class="description short">
+			<p>Uses a get request to convert a
+location (string) into a latitude and longitude
+object.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Uses a get request to convert a
+location (string) into a latitude and longitude
+object.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$location</var></dt>
+					<dd>to geocode</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>latitude and longitude
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_mapquest_api_key" id="_get_mapquest_api_key">
+
+		<td class="attributes"><code>
+			 private 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_mapquest_api_key">#</a>
+		<code><a href="source-class-mapquest_api.html#205-212" title="Go to source code">get_mapquest_api_key</a>( )</code>
+
+		<div class="description short">
+			<p>Function that returns this mapquest object api key</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that returns this mapquest object api key</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>mapquest api key
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="mapQuestSearch" id="_mapQuestSearch">
+
+		<td class="attributes"><code>
+			 private 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_mapQuestSearch">#</a>
+		<code><a href="source-class-mapquest_api.html#214-247" title="Go to source code">mapQuestSearch</a>( <span>string <var>$location</var></span>, <span>integer <var>$lat</var></span>, <span>integer <var>$lng</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that uses the map quest api to do a nearby search based on either a location (string) or a latitude and longitude pair. Also performs searches
+based on mapquest sic_code categories.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that uses the map quest api to do a nearby search based on either a location (string) or a latitude and longitude pair. Also performs searches
+based on mapquest sic_code categories.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$location</var></dt>
+					<dd>(optional if using lat/long pair)</dd>
+					<dt><var>$lat</var></dt>
+					<dd>(latitude)</dd>
+					<dt><var>$lng</var></dt>
+					<dd><p>(longitude)
+NOTE: use either location or lat/lng pair</p></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>json object of search results
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="reverseGeocode" id="_reverseGeocode">
+
+		<td class="attributes"><code>
+			 private 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_reverseGeocode">#</a>
+		<code><a href="source-class-mapquest_api.html#250-263" title="Go to source code">reverseGeocode</a>( <span>integer <var>$lat</var></span>, <span>integer <var>$lng</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that reverses a lat/lng pair
+and returns the address of the lat/lng pair
+using reverse geocoding.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that reverses a lat/lng pair
+and returns the address of the lat/lng pair
+using reverse geocoding.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$lat</var></dt>
+					<dd>(latitude)</dd>
+					<dt><var>$lng</var></dt>
+					<dd>(longitude)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>location in json object format
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="convert_category_to_sic_code" id="_convert_category_to_sic_code">
+
+		<td class="attributes"><code>
+			 private 
+
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_convert_category_to_sic_code">#</a>
+		<code><a href="source-class-mapquest_api.html#266-325" title="Go to source code">convert_category_to_sic_code</a>( <span>string <var>$category</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that takes a category (string), formats the
+string, then converts the string to a mapquest api search category (sic_code used in a get request to the mapquest api).</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that takes a category (string), formats the
+string, then converts the string to a mapquest api search category (sic_code used in a get request to the mapquest api).</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$category</var></dt>
+					<dd>(default is resturant category)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					integer<br>6-digit sic_code
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-api_base_class.html#methods">api_base_class</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-api_base_class.html#_get_prepped_data_array">get_prepped_data_array()</a>, 
+			<a href="class-api_base_class.html#_httpGet">httpGet()</a>, 
+			<a href="class-api_base_class.html#_mergeApiArrays">mergeApiArrays()</a>, 
+			<a href="class-api_base_class.html#_stripExtraCharacters">stripExtraCharacters()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="MAPQUEST_API_KEY" id="$MAPQUEST_API_KEY">
+		<td class="attributes"><code>
+			private  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-mapquest_api.html#14" title="Go to source code"><var>$MAPQUEST_API_KEY</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$MAPQUEST_API_KEY" class="anchor">#</a>
+				<code><span class="php-quote">'UzKbgBQyuWXxCdqz2qxcNvkCqzPpmJby'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="MAPQUEST_CATEGORIES" id="$MAPQUEST_CATEGORIES">
+		<td class="attributes"><code>
+			private  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-mapquest_api.html#18-19" title="Go to source code"><var>$MAPQUEST_CATEGORIES</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$MAPQUEST_CATEGORIES" class="anchor">#</a>
+				<code><span class="php-keyword1">array</span>(<span class="php-num">581208</span>,<span class="php-num">20841</span>,<span class="php-num">541101</span>,<span class="php-num">543102</span>,<span class="php-num">546103</span>,<span class="php-num">572233</span>,<span class="php-num">581203</span>,<span class="php-num">581206</span>,<span class="php-num">581214</span>,
+<span class="php-num">581226</span>,<span class="php-num">581228</span>,<span class="php-num">581301</span>,<span class="php-num">581305</span>,<span class="php-num">581307</span>,<span class="php-num">581309</span>,<span class="php-num">783201</span>,<span class="php-num">799951</span>,<span class="php-num">841201</span>,<span class="php-num">581208</span>)</code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="index" id="$index">
+		<td class="attributes"><code>
+			private  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-mapquest_api.html#22" title="Go to source code"><var>$index</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$index" class="anchor">#</a>
+				<code><span class="php-num">0</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-api_base_class.html#properties">api_base_class</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-api_base_class.html#$prepped_data_array"><var>$prepped_data_array</var></a>, 
+			<a href="class-api_base_class.html#$raw_data_object"><var>$raw_data_object</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

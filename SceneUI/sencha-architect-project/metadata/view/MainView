@@ -1,0 +1,290 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mainview",
+        "designer|userClassName": "MainView",
+        "tabBarPosition": "bottom"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "tabBarPosition": "string",
+        "designer|initialView": "boolean"
+    },
+    "name": "MyTabPanel",
+    "designerId": "8d4af1f4-7fe4-46f2-a66b-2009228608ff",
+    "viewControllerInstanceId": "25358229-9aa9-4964-bb72-2f2db1326882",
+    "viewModelInstanceId": "83a23225-1b99-460b-97e1-9791a5cc3338",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "accountInfo",
+                    "suggestedList",
+                    "interestedList"
+                ],
+                "fn": "loadSuggestedList",
+                "implHandler": [
+                    "//console.log(\"here_loadSuggestedList\");",
+                    "this.accountInfo = accountInfo;",
+                    "this.suggestedList = suggestedList;",
+                    "",
+                    "this.interestedList = interestedList;",
+                    "this.queryById('suggestedTab').loadSuggestedList(this.suggestedList, this.accountInfo);",
+                    "//console.log(this.accountInfo);",
+                    "this.queryById('interestedTab').loadSuggestedList(this.interestedList, this.accountInfo);",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "loadSuggestedList",
+            "designerId": "198af2fe-ca16-4c88-a5b8-880750c0888b"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "suggestedTab",
+                "title": "Suggested"
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "user_suggestedtab",
+            "designerId": "b9bffec4-8f22-4153-8d78-2d0e5d2d43a2",
+            "masterInstanceId": "b7645eea-4454-44a5-84ea-53a579741811",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "scene"
+                        ],
+                        "fn": "onContainerInterestedEvent2",
+                        "implHandler": [
+                            "this.queryById('interestedTab').addNewScene(scene);"
+                        ],
+                        "name": "interestedEvent2"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string"
+                    },
+                    "name": "onContainerInterestedEvent2",
+                    "designerId": "74c7018d-c18e-4b33-ba55-72e466a14b45"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "scene"
+                        ],
+                        "fn": "onContainerDisinterestedEvent2",
+                        "implHandler": [
+                            "this.queryById('interestedTab').removeScene(scene);"
+                        ],
+                        "name": "disinterestedEvent2"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string"
+                    },
+                    "name": "onContainerDisinterestedEvent2",
+                    "designerId": "8168f8e8-2044-4734-8ed2-ecc87a53770a"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "user_settingstab",
+                "title": "Settings"
+            },
+            "configAlternates": {
+                "title": "string",
+                "itemId": "string"
+            },
+            "name": "user_settingstab",
+            "designerId": "7b2f2773-e2fc-4b7d-985c-3c4f97e9f1ac",
+            "masterInstanceId": "51c34cf8-bc16-4442-8413-76856aa488f0",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onContainerLogoutSuccess",
+                        "implHandler": [
+                            "Ext.Viewport.setActiveItem(this.loginPanel);"
+                        ],
+                        "name": "logoutSuccess"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string"
+                    },
+                    "name": "onContainerLogoutSuccess",
+                    "designerId": "0d01ed04-78a2-43da-a250-d3fe0aa9dbe4"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "interestedTab",
+                "title": "Interested"
+            },
+            "configAlternates": {
+                "itemId": "string",
+                "title": "string"
+            },
+            "name": "user_suggestedtab1",
+            "designerId": "3031a82f-01a5-4474-90ef-0c3847a59fa4",
+            "masterInstanceId": "b7645eea-4454-44a5-84ea-53a579741811",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "container"
+                        ],
+                        "fn": "onContainerDisinterestedEvent21",
+                        "implHandler": [
+                            "this.queryById('interestedTab').removeScene(scene);"
+                        ],
+                        "name": "disinterestedEvent2"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string"
+                    },
+                    "name": "onContainerDisinterestedEvent21",
+                    "designerId": "01253d40-2fdb-4e94-ab3d-efe338942ae9"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "container"
+                        ],
+                        "fn": "onContainerInterestedEvent21",
+                        "implHandler": [
+                            "this.queryById('interestedTab').addNewScene(scene);"
+                        ],
+                        "name": "interestedEvent2"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string"
+                    },
+                    "name": "onContainerInterestedEvent21",
+                    "designerId": "60ce1917-6511-4d85-b301-1160b2a31ba9"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "itemDisclosure",
+                "implHandler": [
+                    "var me = this;",
+                    "if(!this.SceneInfoPanel){",
+                    "\tthis.SceneInfoPanel = Ext.create('Scene.view.SceneInfoPanel',{",
+                    "\t\tlisteners: {",
+                    "\t\t\t'interestedEvent':function(scene){",
+                    "\t\t\t\t//console.log('stage 2');",
+                    "\t\t\t\tme.queryById('interestedTab').addNewScene(scene);",
+                    "\t\t\t},",
+                    "\t\t\t'disinterestedEvent':function(scene){",
+                    "\t\t\t\tme.queryById('interestedTab').removeScene(scene);",
+                    "\t\t\t}",
+                    "\t\t}",
+                    "\t});",
+                    "\tthis.SceneInfoPanel.accountInfo = this.accountInfo;",
+                    "}",
+                    "//console.log(this.SceneInfoPanel);",
+                    "this.SceneInfoPanel.currentScene = record.data;",
+                    "this.SceneInfoPanel.show();",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "itemDisclosure",
+            "designerId": "7cbe8f8a-6cfb-423e-bf71-960ba4fa438c"
+        }
+    ]
+}

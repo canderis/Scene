@@ -1,0 +1,125 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "loginview",
+        "designer|userClassName": "LoginView",
+        "height": 250,
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "MyContainer",
+    "designerId": "9dd8f9dc-9383-4241-876e-18377ca2c216",
+    "viewControllerInstanceId": "1a5dba50-aeb7-457f-9b89-0c442b74ad05",
+    "viewModelInstanceId": "0b12117f-cede-45d2-b9c1-0f7a9438da79",
+    "cn": [
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Email",
+                "itemId": "email"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "itemId": "string"
+            },
+            "name": "MyTextField",
+            "designerId": "2a242bc2-fa0e-4571-9a50-872728557316"
+        },
+        {
+            "type": "Ext.form.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldLabel": "Password",
+                "itemId": "password"
+            },
+            "configAlternates": {
+                "fieldLabel": "string",
+                "itemId": "string"
+            },
+            "name": "MyTextField1",
+            "designerId": "f713def2-1435-4e7f-990a-fd4d546e6b85"
+        },
+        {
+            "type": "Ext.button.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "text": "Login"
+            },
+            "configAlternates": {
+                "text": "string"
+            },
+            "name": "MyButton",
+            "designerId": "50cb3138-c828-4ad5-8812-db34da44fa1a",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onButtonClick",
+                        "implHandler": [
+                            "this.fireEvent('login', this.queryById('email').getValue(),  this.queryById('password').getValue());      ",
+                            "/*",
+                            "AERP.Ajax.request({",
+                            "           url:'/SceneRequest/handleNonFacebookLogin',",
+                            "           params: {",
+                            "               email: this.queryById('email').getValue(),",
+                            "               pass: this.queryById('password').getValue(),",
+                            "               latitude: 42.0278208,",
+                            "               longitude: -93.64894819999999",
+                            "           },",
+                            "           success:function(response) {",
+                            "               if(!this.CompanyViewPanel){",
+                            "                  this.CompanyViewPanel = Ext.create('company.view.CompanyView');",
+                            "                 }",
+                            "               this.CompanyViewPanel.show();",
+                            "           },",
+                            "           failure:function(response) {",
+                            "",
+                            "           },",
+                            "           scope:this",
+                            "         });",
+                            "         */"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onButtonClick",
+                    "designerId": "811fd9ed-b967-4811-ae1a-8f9cdeafee47"
+                }
+            ]
+        }
+    ]
+}

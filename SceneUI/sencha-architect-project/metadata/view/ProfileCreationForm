@@ -1,0 +1,389 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "profilecreationform",
+        "designer|userClassName": "ProfileCreationForm",
+        "height": "100%",
+        "layout": "fit"
+    },
+    "configAlternates": {
+        "height": "auto",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string"
+    },
+    "name": "MyFormPanel",
+    "designerId": "5328e755-f9d3-4cb2-9f56-3040c41b8307",
+    "viewControllerInstanceId": "e4d1ca58-f1be-4326-90ba-7fc08b0212fb",
+    "viewModelInstanceId": "b3997014-78fd-4318-a9ae-817930ec1444",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onFormpanelShow",
+                "implHandler": [
+                    "AERP.Ajax.request({",
+                    "\turl:'/SceneRequest/get_current_profile_categories',",
+                    "\t//params: selectedItem,",
+                    "\tsuccess:function(response) {",
+                    "",
+                    "\t\t//console.log(response);",
+                    "\t\tthis.neededInfo = response.data;",
+                    "\t\t//console.log(this.neededInfo);",
+                    "\t\tvar profileChoicesStore = this.getViewModel().getStore('ProfileChoices');",
+                    "",
+                    "\t\tthis.neededInfo.forEach(function(record, i){",
+                    "\t\t\t//var disclosure = false;",
+                    "\t\t\t//if(record.choiceType!==1)",
+                    "\t\t\t\t//disclosure = true;",
+                    "",
+                    "\t\t\tprofileChoicesStore.loadData([[record.id, record.name, i ]] , true);",
+                    "\t\t});",
+                    "",
+                    "\t},",
+                    "\tfailure:function(response) {",
+                    "",
+                    "\t},",
+                    "\tscope:this",
+                    "});",
+                    ""
+                ],
+                "name": "show"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onFormpanelShow",
+            "designerId": "ed5ebd47-4754-489c-96db-5bfaa00a8140"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "listDisclosure",
+                "implHandler": [
+                    "//console.log(record);",
+                    "//console.log(this.neededInfo);",
+                    "",
+                    "var option = this.neededInfo[record.data.indicator];",
+                    "var options = this.queryById('options');",
+                    "options.deselectAll();",
+                    "if(option.choiceType == 1){",
+                    "\toptions.setMode('SINGLE');",
+                    "}",
+                    "else{",
+                    "\toptions.setMode('MULTI');",
+                    "}",
+                    "//console.log(option);",
+                    "this.getViewModel().getStore('ProfileOptions').loadData(option.options);",
+                    "//console.log(this.getViewModel().getStore('ProfileOptions'));",
+                    "",
+                    "this.queryById('choices').hide();",
+                    "this.queryById('done').hide();",
+                    "this.queryById('continue').show();",
+                    "",
+                    "options.show();"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "listDisclosure",
+            "designerId": "0a657682-294d-4dee-a961-77895002d7df"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "hidden": null
+            },
+            "configAlternates": {
+                "height": "auto",
+                "hidden": "boolean"
+            },
+            "name": "MyContainer12",
+            "designerId": "ef9b8f0e-2fd8-4c12-9910-c1ecba17f50d",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "Enter your likes and dislikes to help us provide better event suggestions for you!"
+                    },
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "name": "MyLabel4",
+                    "designerId": "a8b60a0f-b94d-490e-8b82-2ea5df14bdf8"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bottom": 0,
+                        "height": "20%",
+                        "itemId": "done",
+                        "text": "Done",
+                        "width": "100%"
+                    },
+                    "configAlternates": {
+                        "bottom": "auto",
+                        "height": "auto",
+                        "itemId": "string",
+                        "text": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyButton16",
+                    "designerId": "0998758b-fdba-4b1f-b4c2-0c326e818087",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDoneTap",
+                                "implHandler": [
+                                    "//console.log();",
+                                    "this.fireEvent('finishedProfile', this.selectedOptions);"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onDoneTap",
+                            "designerId": "22046c6f-7ba4-4092-af49-c8de6175b5e3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "data": null,
+                        "itemId": "choices",
+                        "mode": "MULTI",
+                        "onItemDisclosure": "listDisclosure",
+                        "store": [
+                            "{ProfileChoices}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "data": "array",
+                        "onItemDisclosure": "string",
+                        "disclosureProperty": "binding",
+                        "itemId": "string",
+                        "mode": "string"
+                    },
+                    "name": "MyList3",
+                    "designerId": "6b58bcd1-8dee-4fa8-a337-090a3803c467",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div>{name}</div>"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "itemTpl",
+                            "designerId": "ed758625-5009-409a-87e6-f5927fd77023"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.dataview.List",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "itemId": "options",
+                        "mode": "MULTI",
+                        "store": [
+                            "{ProfileOptions}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "store": "binding",
+                        "hidden": "boolean",
+                        "itemId": "string",
+                        "mode": "string"
+                    },
+                    "name": "MyList2",
+                    "designerId": "f2adb6d2-3d7b-410d-ac4c-a9f49a5f5749",
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<div>{option}</div>"
+                                ]
+                            },
+                            "configAlternates": {
+                                "designer|displayName": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "itemTpl",
+                            "designerId": "f9964a50-7c06-44d0-86ea-f5b06e5512cd"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "title": "Create Profile"
+            },
+            "configAlternates": {
+                "docked": "string",
+                "title": "string"
+            },
+            "name": "MyTitleBar1",
+            "designerId": "8d8d3e73-9531-4b41-9593-6aa9668e58e7",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bottom": null,
+                        "disabled": null,
+                        "height": null,
+                        "hidden": true,
+                        "itemId": "continue",
+                        "text": "<",
+                        "width": null
+                    },
+                    "configAlternates": {
+                        "bottom": "auto",
+                        "height": "auto",
+                        "text": "string",
+                        "width": "auto",
+                        "disabled": "boolean",
+                        "hidden": "boolean",
+                        "itemId": "string"
+                    },
+                    "name": "MyButton15",
+                    "designerId": "2947138f-081b-48e2-a60c-c568ab3f0646",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onContinueTap",
+                                "implHandler": [
+                                    "if(!this.selectedOptions){",
+                                    "\tthis.selectedOptions = [];",
+                                    "}",
+                                    "",
+                                    "var options = this.queryById('options');",
+                                    "this.queryById('choices').show();",
+                                    "this.queryById('done').show();",
+                                    "this.queryById('continue').hide();",
+                                    "",
+                                    "options.hide();",
+                                    "",
+                                    "",
+                                    "var selected = options.getSelections();",
+                                    "//console.log(selected);",
+                                    "for (var key in selected) {",
+                                    "\t//console.log(selected[key]);",
+                                    "\tthis.selectedOptions.push({",
+                                    "\t\toption: selected[key].data.option,",
+                                    "\t\tprofile_options_id: selected[key].data.profile_options_id",
+                                    "\t});",
+                                    "}",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onContinueTap",
+                            "designerId": "7acf5d6f-2d04-4ec9-b23a-68a932834c8d"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

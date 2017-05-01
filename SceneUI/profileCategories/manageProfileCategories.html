@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Manage Profile Categories</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<style>
+body {
+	font-family: calibri
+}
+</style>
+</head>
+
+<body>
+<h1>Manage Profile Categories</h1>
+<div id="div">
+<button type="button" id="current">Current Categories</button> <button type="button" id="clear">Clear</button>
+<button type="button" id="addCategory">Add a Category</button>
+<a href="homepage.html"><button type="button">Go Home</button></a>
+<p></p>
+
+</div>
+
+<div id="data">
+</div>
+
+<div id="add"  style="visibility:hidden">
+	Category Type: <select id="categoryType">
+					<option value="" disabled selected>Select</option>
+					<option value="list">List</option>
+					<option value="binary">Choice</option>
+					</select>
+</div>
+<p></p>
+
+<div id="list" style="visibility: hidden">
+	Option Name: <input type="text" id="listName"></input><br>
+	List Options (separate with comma): <input type="text" id="listOptions"></input><br>
+</div>
+
+<div id="binary" style="visibility: hidden">
+	Option Name: <input type="text" id="binaryName"></input><br>
+	<!--Choice Question: <input type="text" id="binaryText"></input><br>-->
+	Choice Options (enter two, separated with a comma): <input type="text" id="binaryOptions"></input>
+</div>
+<p></p>
+
+<button type="button" id="submit" style="visibility: hidden">Add</button>
+<button type="button" id="submit2" style="visibility: hidden">Add</button>
+</body>
+
+<script>
+$(document).ready(function(){
+
+	$("#clear").click(function(){
+		$("#data").html("");
+		$("#add").css("visibility", "hidden");
+		$("#submit").css("visibility", "hidden");
+		$("#binary").css("visibility", "hidden");
+		$("#list").css("visibility", "hidden");
+		$("#submit2").css("visibility", "hidden");
+	});
+
+	$("#current").click(function(){
+		$("#data").html("");
+		$("#add").css("visibility", "hidden");
+		$("#submit").css("visibility", "hidden");
+		$("#binary").css("visibility", "hidden");
+		$("#list").css("visibility", "hidden");
+		$("#submit2").css("visibility", "hidden");
+
+		$.ajax({
+			type: 'POST',
+			url: '/scenerequest/get_current_profile_categories',
+			dataType: 'json',
+			//data: info,
+			success: function(data){
+				//data.data holds the actual information
+				console.log(data);
+
+				var $table = "<table><tr><td><b>Category Name</b></td><td><b>Category Type</b></td><td><b>Options</b></td></tr>";
+				$.each(data.data, function(i, item){
+						$table += '<tr><td><b>'+ item.name+'</b></td><td><b>';
+						if(item.choiceType == 0){
+							$table+= 'List </b></td>';
+						}else{
+							$table+= 'Binary</b></td>';
+						}
+
+					$.each(item.options, function(i, item){
+						//console.log(item.option);
+						$table += '<td>'+ item.option + '</td>';
+					});
+					$table+='</tr>';	
+
+				});
+				//document.getElementById("data").innerHTML = $table;
+				$('#data').append($table+="</table>");
+				
+			},
+			error: function(data){
+				console.log(data);
+			}
+		});
+	});
+
+
+	$("#addCategory").click(function(){
+		$("#data").html("");
+		$("#add").css("visibility", "visible");
+		//$("#submit").css("visibility", "visible");
+
+		$("#categoryType").change(function(){
+			var select_type = $("#categoryType").val();
+			//console.log(select_type);
+			
+			
+			if(select_type === "list"){
+				$("#binary").css("visibility", "hidden");
+				$("#list").css("visibility", "visible");
+				$("#submit2").css("visibility", "hidden");
+				$("#submit").css("visibility", "visible");
+
+				$("#submit").click(function(){
+					var info = {choiceType:select_type, name:$("#listName").val(), options:$("#listOptions").val().split(",")};
+					add_category(info);					
+				});
+
+			}
+			else if(select_type === "binary"){
+				$("#list").css("visibility", "hidden");
+				$("#binary").css("visibility", "visible");
+				$("#submit").css("visibility", "hidden");
+				$("#submit2").css("visibility", "visible");
+				
+
+				$("#submit2").click(function(){
+					var info = {choiceType:select_type, name:$("#binaryName").val(), options:$("#binaryOptions").val().split(",")};
+					//console.log(info);
+					add_category(info);
+				});
+			}
+
+		});
+
+
+
+	});
+
+	function add_category(info){
+
+		$.ajax({
+			type: 'POST',
+			data: info,
+			dataType: 'json',
+			url: '/scenerequest/add_new_profile_category',
+			success: function(data){
+				//console.log(data);
+			},
+			error: function(data){
+				console.log(data);
+			}
+		});
+
+	}
+
+
+
+})
+</script>
+
+</html>

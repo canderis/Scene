@@ -1,0 +1,28 @@
+{
+    "type": "libraryresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "basePath": "/inc/js/ext-6.2-latest/build/",
+        "debug": true,
+        "designer|userClassName": "Library",
+        "libraryRequires": [
+            "google",
+            "ux"
+        ],
+        "theme": "IOs"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "exportAppliedTheme": "boolean",
+        "theme": "string",
+        "basePath": "uri",
+        "debug": "boolean",
+        "libraryRequires": "typedarray"
+    },
+    "name": "Library",
+    "designerId": "cb3e37ae-0015-4434-a3d0-cfc739aaffe5"
+}

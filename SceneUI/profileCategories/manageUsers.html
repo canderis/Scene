@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<!-- @author Eva Kuntz -->
+<head>
+<title>Manage Users</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<style>
+body {
+	font-family: calibri
+}
+.error{
+	color: red;
+}
+</style>
+</head>
+
+
+<body>
+<h1>Manage Users</h1>
+<button type="button" id="viewAll">View All Admin</button>
+<button type="button" id="viewCurrent">View Current Admins</button>
+<button type="button" id="viewPending">View Pending Admins</button>
+<button type="button" id="viewDenied">View Denied Admins</button>
+<a href="homepage.html"><button type="button">Go Home</button></a>
+<p></p>
+
+<!-- data area -->
+<div id="data">
+</div>
+
+<p></p>
+
+<div id="denyComment" style="visibility:hidden">
+<p>Comment on why user is being denied admin privileges:</p>
+<textarea id="comment" rows="4" cols="50" maxlength="255">
+</textarea><br>
+<button type="button" id="submitDeny">Submit</button>
+</div>
+
+
+</body>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	function clear_screen(){
+		document.getElementById("data").innerHTML = "<p></p>";
+		document.getElementById("denyComment").style.visibility = "hidden";
+	}	
+
+	$(".approve_pending").click(function(event){
+		approve_pending(event.target.id);
+	})
+
+	$("#viewAll").click(function(){
+		clear_screen();
+
+		$.ajax({
+			type: 'POST',
+			dataType: 'json',
+			url: '/scenerequest/view_all_admins',
+			success: function(data){
+				if(data.data.length == 0){
+					document.getElementById("data").innerHTML = "<p><b>No admins to display.</b></p>";
+				}else{
+
+				var table = "<table><tr><td><b>Admin ID</b></td><td><b>Name</b></td><td><b>Email</b></td><td><b>Status</b></td></tr>";
+				$.each(data.data, function(i, item){
+					table+="<tr><td>"+item.user_info_id+"</td><td>"+item.name+"</td><td>"+item.email_address+"</td><td>"+ convert_status(item.status) + "</td></tr>";
+				});
+					document.getElementById("data").innerHTML = table;
+				}
+
+			},
+			error: function(data){
+				console.log(data);
+			}
+		});
+
+	});
+
+	$("#viewCurrent").click(function(){
+		clear_screen();
+
+		$.ajax({
+			type: 'POST',
+			dataType: 'json',
+			url: '/scenerequest/view_current_admins',
+			success: function(data){
+				if(data.data.length == 0){
+					document.getElementById("data").innerHTML = "<p><b>No active admins to display.</b></p>";
+				}else{
+
+				var table = "<table><tr><td><b>Admin ID</b></td><td><b>Name</b></td><td><b>Email</b></td><td><b>Status</b></td></tr>";
+				$.each(data.data, function(i, item){
+					table+="<tr><td>"+item.user_info_id+"</td><td>"+item.name+"</td><td>"+item.email_address+"</td><td>"+ convert_status(item.status) + "</td></tr>";
+				});
+					document.getElementById("data").innerHTML = table;
+				}
+
+			},
+			error: function(data){
+				console.log(data);
+			}
+		});
+	});
+
+
+
+	$("#viewPending").click(function(){
+		clear_screen();
+
+		$.ajax({
+			type: 'POST',
+			dataType: 'json',
+			url: '/scenerequest/view_pending_admins',
+			success: function(data){
+				if(data.data.length == 0){
+					document.getElementById("data").innerHTML = "<p><b>No pending admins to display.</b></p>";
+				}else{
+					var table = "<table><tr><td><b>Admin ID</b></td><td><b>Name</b></td><td><b>Email</b></td><td><b>Status</b></td><td><b>Action</b></td></tr>";
+				$.each(data.data, function(i, item){
+					table+="<tr><td>"+item.user_info_id+"</td><td>"+item.name+"</td><td>"+item.email_address+"</td><td>"+ convert_status(item.status) + "</td><td><button id="+item.email_address+"  type='button' onclick='approve_pending(this.id)'>Approve</button><button id="+item.email_address+" onclick='deny_pending(this.id)' type='button'>Deny</button></td></tr>";
+				});
+					document.getElementById("data").innerHTML = table;
+				}
+			},
+			error: function(data){
+				console.log(data);
+			}
+		});
+	});
+
+
+	$("#viewDenied").click(function(){
+		clear_screen();
+
+		$.ajax({
+			type: 'POST',
+			dataType: 'json',
+			url: '/scenerequest/view_denied_admins',
+			success: function(data){				
+				if(data.data.length == 0){
+					document.getElementById("data").innerHTML = "<p><b>No denied admins to display.</b></p>";
+				}else{
+					var table = "<table><tr><td><b>Admin ID</b></td><td><b>Name</b></td><td><b>Email</b></td><td><b>Status</b></td><td><b>Comment</b></td></tr>";
+				$.each(data.data, function(i, item){
+					table+="<tr><td>"+item.user_info_id+"</td><td>"+item.name+"</td><td>"+item.email_address+"</td><td>"+ convert_status(item.status) + "</td><td>" + item.comment + "</td></tr>";
+				});
+					document.getElementById("data").innerHTML = table;
+				}
+			},
+			error: function(data){
+				console.log(data);
+			}
+		});
+	});
+
+	function convert_status(status){
+		if(status == 0){
+			return "Pending";
+		}else if(status == 1){
+			return "Approved";
+		}else{
+			return "Denied";
+		}
+	}
+
+})
+
+function approve_pending(user_email){
+	$.ajax({
+	type: 'POST',
+		data: {admin_email:user_email,new_status:1},
+		dataType: 'json',
+		url: '/scenerequest/update_pending_admin',
+		success: function(data){
+			console.log(data);
+		},
+		error: function(data){
+			console.log(data);
+		}
+	});
+}
+
+function deny_pending(user_email){
+	document.getElementById("denyComment").style.visibility = "visible";	
+
+	$("#submitDeny").click(function(){
+		var comment = document.getElementById("comment").value;
+
+		if(comment.length < 1){
+			alert("A comment is required to deny an admin!");
+			return;
+		}else{
+			$.ajax({
+			type: 'POST',
+			data: {admin_email:user_email,new_status:2,comment:comment},
+			dataType: 'json',
+			url: '/scenerequest/update_pending_admin',
+			success: function(data){
+				if(data.success === true){
+					alert("User successfully denied admin privileges.");
+					location.reload();
+				}
+			},
+			error: function(data){
+				console.log(data);
+			}
+			});
+		}//end of if/else
+	});
+}
+</script>
+</html>

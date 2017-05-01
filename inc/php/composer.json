@@ -1,0 +1,8 @@
+{
+    "require": {
+        "rmccue/requests": "^1.7",
+        "hashids/hashids": "^2.0",
+        "facebook/graph-sdk": "^5.4",
+        "ezyang/htmlpurifier": "^4.9"
+    }
+}

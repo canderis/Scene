@@ -1,0 +1,1 @@
+server-root-code is the code that lives on the root of the server. Handles routing to the pieces of the app.

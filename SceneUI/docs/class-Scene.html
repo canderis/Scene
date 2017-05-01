@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Scene</title>
+
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-api_base_class.html">api_base_class</a></li>
+				<li><a href="class-bandsintown_api.html">bandsintown_api</a></li>
+				<li><a href="class-mapquest_api.html">mapquest_api</a></li>
+				<li class="active"><a href="class-Scene.html">Scene</a></li>
+				<li><a href="class-yelp_api.html">yelp_api</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Scene</h1>
+
+
+	<div class="description">
+	<p>Scene.php</p>
+
+<p>Scene PHP is the master class file for the Scene app.
+An object of the Scene Class is created when a call is made to route.php via the url /SceneRequest/funtion_name
+The router will then try to call the appropriate file in this class.
+This class is responsible for all communication with the Scene user interface.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+				<b>Author:</b>
+				Scott Huffman<br>
+			<b>Located at</b> <a href="source-class-Scene.html#18-308" title="Go to source code">scene.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Scene.html#32-38" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			<p>Prepairs the database helper for connecting to the database.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Prepairs the database helper for connecting to the database.</p>
+
+
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Scott Huffman<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_event_data" id="_get_event_data">
+
+		<td class="attributes"><code>
+			 private 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_event_data">#</a>
+		<code><a href="source-class-Scene.html#57-78" title="Go to source code">get_event_data</a>( <span>var <var>$latitude</var></span>, <span>var <var>$longitude</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that calls all our apis, preps the data arrays,
+and merges the results into one array with
+different event and location data.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that calls all our apis, preps the data arrays,
+and merges the results into one array with
+different event and location data.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$latitude</var></dt>
+					<dd>latitude</dd>
+					<dt><var>$longitude</var></dt>
+					<dd>longitude</dd>
+				</dl></div>
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLocationFromIP" id="_getLocationFromIP">
+
+		<td class="attributes"><code>
+			 private 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLocationFromIP">#</a>
+		<code><a href="source-class-Scene.html#81-93" title="Go to source code">getLocationFromIP</a>( )</code>
+
+		<div class="description short">
+			<p>Uses IP address to find location.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Uses IP address to find location.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>"city, state"
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getResultsByLocation" id="_getResultsByLocation">
+
+		<td class="attributes"><code>
+			 private 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getResultsByLocation">#</a>
+		<code><a href="source-class-Scene.html#96-111" title="Go to source code">getResultsByLocation</a>( <span>var <var>$latitude</var></span>, <span>var <var>$longitude</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that gets results of nearby searches from various APIs
+and returns the results in an array</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that gets results of nearby searches from various APIs
+and returns the results in an array</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$latitude</var></dt>
+					<dd>latitude</dd>
+					<dt><var>$longitude</var></dt>
+					<dd>longitude</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>array of results from a mapquest nearby search
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						All Team Members<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="echoJson" id="_echoJson">
+
+		<td class="attributes"><code>
+			 private 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_echoJson">#</a>
+		<code><a href="source-class-Scene.html#113-121" title="Go to source code">echoJson</a>( <span>boolean <var>$result</var></span>, <span>array <var>$data</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that echos json data back to client for reading by sencha</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that echos json data back to client for reading by sencha</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$result</var></dt>
+					<dd>is the result boolean, true if the code executed successfully, false if it fails.</dd>
+					<dt><var>$data</var></dt>
+					<dd>is whatever info needed to be passed back to the client</dd>
+				</dl></div>
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Scott Huffman<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="handleFacebookLogin" id="_handleFacebookLogin">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_handleFacebookLogin">#</a>
+		<code><a href="source-class-Scene.html#123-187" title="Go to source code">handleFacebookLogin</a>( )</code>
+
+		<div class="description short">
+			<p>Function that handles the Facebook login. The JavaScript side connects to facebook and passes a
+signed_request token.
+The Facebook canvas helper interprets the token, verrifies it and opens a dialog wit the facebook API,
+The funtion gets the user's info from Facebook, and uses that to either create an accout or connect to.
+an existing account. It then passes the data back to the client about the user, and gathers the results
+to populate the app.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that handles the Facebook login. The JavaScript side connects to facebook and passes a
+signed_request token.
+The Facebook canvas helper interprets the token, verrifies it and opens a dialog wit the facebook API,
+The funtion gets the user's info from Facebook, and uses that to either create an accout or connect to.
+an existing account. It then passes the data back to the client about the user, and gathers the results
+to populate the app.</p>
+
+
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Scott Huffman<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="insert_into_user_info" id="_insert_into_user_info">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_insert_into_user_info">#</a>
+		<code><a href="source-class-Scene.html#189-205" title="Go to source code">insert_into_user_info</a>( <span>string <var>$name</var></span>, <span>string <var>$fb_user_id</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$email_address</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$password</var> = <span class="php-keyword1">null</span></span>, <span>var <var>$account_type</var> = <span class="php-num">1</span></span> )</code>
+
+		<div class="description short">
+			<p>Function to insert new user data into our user_info database</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function to insert new user data into our user_info database</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><ul>
+<li>varchar(40). Account's name</li>
+</ul></dd>
+					<dt><var>$fb_user_id</var></dt>
+					<dd><ul>
+<li>varchar(16). User's Facebook id if they log in with their Facebook account</li>
+</ul></dd>
+					<dt><var>$email_address</var></dt>
+					<dd><ul>
+<li>varchar(255). Account's email address</li>
+</ul></dd>
+					<dt><var>$password</var></dt>
+					<dd><ul>
+<li>varchar(255). Account's password</li>
+</ul></dd>
+					<dt><var>$account_type</var></dt>
+					<dd><ul>
+<li>int(1). Could be a 0, 1, 2. 0 = primary user account, 1 = company account, 2 = admin account</li>
+</ul></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$that the user was placed in the database
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Sydney Ehlinger<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="validate_user" id="_validate_user">
+
+		<td class="attributes"><code>
+			 private 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_validate_user">#</a>
+		<code><a href="source-class-Scene.html#207-218" title="Go to source code">validate_user</a>( <span>var <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that validates that a user exists in our user_info database table based on the user's id</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that validates that a user exists in our user_info database table based on the user's id</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd><ul>
+<li>int. Account's Facebook id</li>
+</ul></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>user's info or empty array
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Sydney Ehlinger<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update_user_interest" id="_update_user_interest">
+
+		<td class="attributes"><code>
+			 private 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update_user_interest">#</a>
+		<code><a href="source-class-Scene.html#220-241" title="Go to source code">update_user_interest</a>( <span>string <var>$user_id</var></span>, <span>string <var>$event_id</var></span>, <span>string <var>$user_interest</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that updates the users "interest"
+(either to interest or disinterest)
+for any given event.
+NOTE: 0-event has not been 'touched'
+1-user is interested in event
+2-user is disinterested in event</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that updates the users "interest"
+(either to interest or disinterest)
+for any given event.
+NOTE: 0-event has not been 'touched'
+1-user is interested in event
+2-user is disinterested in event</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd>user_id</dd>
+					<dt><var>$event_id</var></dt>
+					<dd>that user is attempting to update</dd>
+					<dt><var>$user_interest</var></dt>
+					<dd>(1 if interested, 2 if not interested)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>MySQL result (whether or not update was successful)
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update_user_like" id="_update_user_like">
+
+		<td class="attributes"><code>
+			 private 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update_user_like">#</a>
+		<code><a href="source-class-Scene.html#243-263" title="Go to source code">update_user_like</a>( <span>string <var>$user_id</var></span>, <span>string <var>$event_id</var></span>, <span>integer <var>$user_like</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that updates the user's "like"
+(either to like or dislike)
+for any given event.
+NOTE: 0-event has not been 'touched'
+1-user liked the event event
+2-user disliked the event</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that updates the user's "like"
+(either to like or dislike)
+for any given event.
+NOTE: 0-event has not been 'touched'
+1-user liked the event event
+2-user disliked the event</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd>user_id</dd>
+					<dt><var>$event_id</var></dt>
+					<dd>that user is attempting to update</dd>
+					<dt><var>$user_like</var></dt>
+					<dd>(1 if like, 2 if dislike)</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>MySQL result (whether or not update was successful)
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_user_likes" id="_get_user_likes">
+
+		<td class="attributes"><code>
+			 private 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_user_likes">#</a>
+		<code><a href="source-class-Scene.html#272-286" title="Go to source code">get_user_likes</a>( <span>string <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that returns an array of tuples
+of user liked events based on user_id from database.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that returns an array of tuples
+of user liked events based on user_id from database.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd>user_id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>MySQL result of the query (array of tuples)
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_user_interested" id="_get_user_interested">
+
+		<td class="attributes"><code>
+			 private 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_user_interested">#</a>
+		<code><a href="source-class-Scene.html#289-305" title="Go to source code">get_user_interested</a>( <span>string <var>$user_id</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that returns an array of tuples
+of user interested events based on user_id from database
+Function that returns an array of tuples
+of user interested events based on user_id from database</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that returns an array of tuples
+of user interested events based on user_id from database
+Function that returns an array of tuples
+of user interested events based on user_id from database</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$user_id</var></dt>
+					<dd>user_id</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>MySQL query result (array of tuples)
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Eva Kuntz<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

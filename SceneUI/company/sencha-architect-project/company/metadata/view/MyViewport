@@ -1,0 +1,111 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "myviewport",
+        "designer|userClassName": "MyViewport",
+        "height": 250,
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "width": "auto"
+    },
+    "name": "MyViewport",
+    "designerId": "ecfd8d6f-791d-469f-85a4-3fcf3b04e98f",
+    "viewControllerInstanceId": "e7180028-e480-4bbb-90d6-2e11d70fbc07",
+    "viewModelInstanceId": "f48a8749-4aba-4fd1-b137-da8ba8392b5d",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "loginView"
+            },
+            "configAlternates": {
+                "itemId": "string"
+            },
+            "name": "loginview",
+            "designerId": "340c652d-923b-451f-9705-7035a9a03236",
+            "masterInstanceId": "9dd8f9dc-9383-4241-876e-18377ca2c216",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "email",
+                            "password"
+                        ],
+                        "fn": "onContainerLogin",
+                        "implHandler": [
+                            "AERP.Ajax.request({",
+                            "    url:'/SceneRequest/handleNonFacebookLogin',",
+                            "    params: {",
+                            "        email: email,",
+                            "        pass: password,",
+                            "        latitude: 42.0278208,",
+                            "        longitude: -93.64894819999999",
+                            "    },",
+                            "    success:function(response) {",
+                            "        this.queryById('loginView').hide();",
+                            "        this.queryById('companyView').show();",
+                            "    },",
+                            "    failure:function(response) {",
+                            "",
+                            "    },",
+                            "    scope:this",
+                            "});"
+                        ],
+                        "name": "login",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onContainerLogin",
+                    "designerId": "e2f2f24a-3ec8-4704-9546-f4a784768eee"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "itemId": "companyView"
+            },
+            "configAlternates": {
+                "hidden": "boolean",
+                "itemId": "string"
+            },
+            "name": "companyview",
+            "designerId": "bf05e8cd-f7f0-4086-b667-8eefe9d7aed9",
+            "masterInstanceId": "31a5c7a8-83f3-469c-a812-259075040f15"
+        }
+    ]
+}

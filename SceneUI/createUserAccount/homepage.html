@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Homepage</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<style>
+body{
+font-family:calibri}
+.error {
+color: #FF0000}
+</style>
+</head>
+
+<body>
+This is the homepage. It's not much because this is more of a "test" process.<br>
+The server-side logic and data validation will be used when working with Sencha<br>
+to create the 'official' UI for the creation of a user account (without FB).<p></p>
+
+<button type="button" id="logout" onclick="logout()">Logout</button>
+</body>
+
+<script type="text/javascript">
+function logout(){
+	if(confirm("Do you really wish to logout?")){
+		window.location.href = "login.html";
+	}
+}
+</script>
+</html>

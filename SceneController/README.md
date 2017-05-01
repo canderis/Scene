@@ -1,0 +1,1 @@
+This is the directory for all PHP code. All requests for data should be directed through a file in this directory.

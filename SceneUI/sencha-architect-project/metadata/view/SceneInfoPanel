@@ -1,0 +1,619 @@
+{
+    "type": "Ext.ActionSheet",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sceneinfopanel",
+        "designer|userClassName": "SceneInfoPanel",
+        "height": "100%",
+        "layout": "vbox",
+        "title": null
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string",
+        "height": "auto"
+    },
+    "designerId": "d2699bc7-bf8a-48cd-9c68-fbeabd546b7c",
+    "viewControllerInstanceId": "be46c359-4677-4820-9820-bef99d43bc09",
+    "viewModelInstanceId": "ab0d1d5e-6791-47e5-b8dd-8a884036a567",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadForm",
+                "implHandler": [
+                    "this.queryById('titleBackBar').setTitle(this.currentScene.name);",
+                    "this.queryById(\"address\").setHtml(this.currentScene.address);",
+                    "this.queryById(\"distance\").setHtml(this.currentScene.distance + this.currentScene.distanceUnit);",
+                    "this.queryById(\"scene-image\").setHtml(",
+                    "\t'<div style=\"height:100%;width:100%;background-image:url('+\"'\"+this.currentScene.image_url_y +\"'\"+ ')\"></div>');",
+                    "",
+                    "this.queryById(\"desc\").setHtml(this.currentScene.snippet_text_y);"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "loadForm",
+            "designerId": "702844a3-448d-4d32-87df-21d2c51317ef"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "40px",
+                "layout": "vbox"
+            },
+            "configAlternates": {
+                "layout": "string",
+                "height": "auto"
+            },
+            "name": "MyContainer",
+            "designerId": "4bbaad94-e911-4cf0-b03e-6a0a3ecc93da",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "address",
+                        "itemId": "address",
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "html": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyLabel1",
+                    "designerId": "38a82a36-8840-4cdd-a4f3-5d23c2eeddd1"
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "distance",
+                        "itemId": "distance",
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "html": "string",
+                        "itemId": "string",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyLabel2",
+                    "designerId": "05814478-457e-45ad-8d97-65d1ba27b83a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "100px",
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "layout": "string",
+                "height": "auto"
+            },
+            "name": "MyContainer2",
+            "designerId": "0010ee07-ac3d-4fd1-8364-6a1cea22452a",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": "100%",
+                        "itemId": "scene-image",
+                        "layout|flex": null,
+                        "width": "100px"
+                    },
+                    "configAlternates": {
+                        "layout|flex": "number",
+                        "height": "auto",
+                        "itemId": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyContainer4",
+                    "designerId": "ccbacc7d-eb94-44ad-86fd-3c56c3f2b008"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "desc",
+                "layout|flex": 1
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "itemId": "string"
+            },
+            "name": "MyContainer5",
+            "designerId": "fef75793-95c8-47e7-974e-d7bac9d0b947"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyContainer7",
+            "designerId": "fb2341d0-4e66-421a-bbec-e24a7f4a738c",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "Are you interested?"
+                    },
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "name": "MyLabel3",
+                    "designerId": "c422f0fa-8c38-46be-8c07-7ef884086f2a"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": "45px"
+                    },
+                    "configAlternates": {
+                        "height": "auto"
+                    },
+                    "name": "MyContainer8",
+                    "designerId": "5b993d6d-b756-4ac1-98c3-8465fa56c036",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "100%",
+                                "itemId": "mybutton7",
+                                "margin": "0 5 0 0",
+                                "padding": null,
+                                "text": "<i class=\"fa fa-smile-o\" aria-hidden=\"true\" style=\"font-size:50px\"></i>",
+                                "top": null
+                            },
+                            "configAlternates": {
+                                "height": "auto",
+                                "margin": "auto",
+                                "padding": "auto",
+                                "text": "string",
+                                "top": "auto",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton7",
+                            "designerId": "3e3c6141-1cfd-4983-b6a1-19b9c730a604",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton7Tap",
+                                        "implHandler": [
+                                            "//console.log(this.accountInfo,this.currentScene);",
+                                            "",
+                                            "AERP.Ajax.request({",
+                                            "\turl:'/SceneRequest/user_interested',",
+                                            "\tparams: {",
+                                            "\t\taccount_id:this.accountInfo.id,",
+                                            "\t\tkey: this.currentScene.uniqueId,",
+                                            "\t\tcompanyName: this.currentScene.name",
+                                            "\t},",
+                                            "\tsuccess:function(response) {",
+                                            "\t\tthis.fireEvent('interestedEvent', this.currentScene);",
+                                            "\t},",
+                                            "\tfailure:function(response) {",
+                                            "",
+                                            "\t},",
+                                            "\tscope:this",
+                                            "});"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "onMybutton7Tap",
+                                    "designerId": "ad3eb43b-1c3e-431a-b36f-da511d0b671d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "100%",
+                                "itemId": "mybutton8",
+                                "left": null,
+                                "text": "<i class=\"fa fa-frown-o\" aria-hidden=\"true\"  style=\"font-size:50px\"></i>",
+                                "top": null
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "height": "auto",
+                                "left": "auto",
+                                "top": "auto",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton8",
+                            "designerId": "fb857379-5185-4ca2-bae5-3bccafeed345",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton8Tap",
+                                        "implHandler": [
+                                            "AERP.Ajax.request({",
+                                            "\turl:'/SceneRequest/user_disinterested',",
+                                            "\tparams: {",
+                                            "\t\taccount_id:this.accountInfo.id,",
+                                            "\t\tkey: this.currentScene.uniqueId,",
+                                            "\t\tcompanyName: this.currentScene.name",
+                                            "\t},",
+                                            "\tsuccess:function(response) {",
+                                            "\t\tthis.fireEvent('disinterestedEvent', this.currentScene);",
+                                            "\t},",
+                                            "\tfailure:function(response) {",
+                                            "",
+                                            "\t},",
+                                            "\tscope:this",
+                                            "});"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "onMybutton8Tap",
+                                    "designerId": "91145d84-7bbf-4dad-87c8-1021d608733c"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyContainer6",
+            "designerId": "d9a07e93-71f9-4165-9e0f-2ca7904d9e0d",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "Have you been here before?"
+                    },
+                    "configAlternates": {
+                        "html": "string"
+                    },
+                    "name": "MyLabel3",
+                    "designerId": "30721759-69a8-4b7c-9951-08bf8e6afe14"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": "45px"
+                    },
+                    "configAlternates": {
+                        "height": "auto"
+                    },
+                    "name": "MyContainer8",
+                    "designerId": "9f887473-d29c-4a71-9931-8c734dc4699a",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "100%",
+                                "itemId": "mybutton7",
+                                "margin": "0 5 0 0",
+                                "padding": null,
+                                "text": "<i class=\"fa fa-smile-o\" aria-hidden=\"true\" style=\"font-size:50px\"></i>",
+                                "top": null
+                            },
+                            "configAlternates": {
+                                "height": "auto",
+                                "margin": "auto",
+                                "padding": "auto",
+                                "text": "string",
+                                "top": "auto",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton7",
+                            "designerId": "adc47981-f19d-4cf3-8125-76aa6fbb6a17",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton7Tap1",
+                                        "implHandler": [
+                                            "AERP.Ajax.request({",
+                                            "\turl:'/SceneRequest/user_like',",
+                                            "\tparams: {",
+                                            "\t\taccount_id:this.accountInfo.id,",
+                                            "\t\tkey: this.currentScene.uniqueId,",
+                                            "\t\tcompanyName: this.currentScene.name",
+                                            "\t},",
+                                            "\tsuccess:function(response) {",
+                                            "\t\t//console.log(response);",
+                                            "\t},",
+                                            "\tfailure:function(response) {",
+                                            "",
+                                            "\t},",
+                                            "\tscope:this",
+                                            "});"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string"
+                                    },
+                                    "name": "onMybutton7Tap1",
+                                    "designerId": "0e8cda4f-7b1f-4137-8cce-973f8f5e2bab"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": "100%",
+                                "itemId": "mybutton8",
+                                "left": null,
+                                "text": "<i class=\"fa fa-frown-o\" aria-hidden=\"true\"  style=\"font-size:50px\"></i>",
+                                "top": null
+                            },
+                            "configAlternates": {
+                                "text": "string",
+                                "height": "auto",
+                                "left": "auto",
+                                "top": "auto",
+                                "itemId": "string"
+                            },
+                            "name": "MyButton8",
+                            "designerId": "2329e695-37fb-4d62-839e-d40ac806993b",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onMybutton8Tap1",
+                                        "implHandler": [
+                                            "AERP.Ajax.request({",
+                                            "\turl:'/SceneRequest/user_dislike',",
+                                            "\tparams: {",
+                                            "\t\taccount_id:this.accountInfo.id,",
+                                            "\t\tkey: this.currentScene.uniqueId,",
+                                            "\t\tcompanyName: this.currentScene.name",
+                                            "\t},",
+                                            "\tsuccess:function(response) {",
+                                            "\t\t//console.log(response);",
+                                            "\t},",
+                                            "\tfailure:function(response) {",
+                                            "",
+                                            "\t},",
+                                            "\tscope:this",
+                                            "});"
+                                        ],
+                                        "name": "tap"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string"
+                                    },
+                                    "name": "onMybutton8Tap1",
+                                    "designerId": "a8bee25c-6b83-4b5c-a479-4ffbd94a4fb4"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "60px"
+            },
+            "configAlternates": {
+                "height": "auto"
+            },
+            "name": "MyContainer1",
+            "designerId": "11059653-1a2d-4042-ba5d-f093f03f5b03"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onActionsheetShow",
+                "implHandler": [
+                    "this.loadForm();"
+                ],
+                "name": "show"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onActionsheetShow",
+            "designerId": "ba96c99f-eb8a-480a-9765-054a5bf89d21"
+        },
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "itemId": "titleBackBar"
+            },
+            "configAlternates": {
+                "docked": "string",
+                "itemId": "string"
+            },
+            "name": "MyTitleBar",
+            "designerId": "f302e725-0590-4b62-a29f-2fecb4ba0492",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "mybutton11",
+                        "text": "<"
+                    },
+                    "configAlternates": {
+                        "text": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyButton11",
+                    "designerId": "a02e0ccb-744c-47be-97d1-892d48c8fef0",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMybutton11Tap",
+                                "implHandler": [
+                                    "this.hide();"
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string"
+                            },
+                            "name": "onMybutton11Tap",
+                            "designerId": "fdc6604d-eefa-4b6d-b9b2-32db707200c0"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

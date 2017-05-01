@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Profile</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="createUserAccount.js"></script>
+<style>
+body{
+font-family:calibri}
+.error {
+color: #FF0000}
+</style>
+</head>
+
+<body>
+<h1>Create Profile</h1>
+Enter your likes and dislikes to help us provide better event suggestions for you!
+<p></p>
+
+<div id="musicDiv">
+<b><u>MUSIC</u></b><br>
+Select up to 3 of your favorite music genres:<br>
+<select id="music" multiple>
+	<option value="pop">Pop</option>
+	<option value="rock">Rock</option>
+	<option value="classical">Classical</option>
+	<option value="rap">Rap & Hip-Hop</option>
+	<option value="indie">Indie</option>
+	<option value="alternative">Alternative</option>
+	<option value="country">Country</option>
+</select>
+</div>
+<span class="error"><p id="musicError"></p></span>
+<p></p>
+
+<div id="foodDiv">
+<b><u>FOOD</u></b><br>
+Select up to 3 of your favorite food categories:<br>
+<select id="food" multiple>
+	<option value="american">American</option>
+	<option value="mexican">Mexican</option>
+	<option value="chinese">Chinese</option>
+	<option value="italian">Italian</option>
+	<option value="afghan">Afghan</option>
+	<option value="vietnamese">Vietnamese</option>
+	<option value="seafood">Seafood</option>
+	<option value="indian">Indian</option>
+</select>
+</div>
+<span class="error"><p id="foodError"></p></span>
+<p></p>
+
+<div id="cafeDiv">
+Do you enjoy cafes and cafe-like establishments?
+<label>
+    <input type="radio" id="cafeYES" name="cafe" value="yes"/>Yes
+</label>
+<label>
+    <input type="radio" id="cafeNO" name="cafe" value="no"/>No
+</label>
+</div>
+<span class="error"><p id="cafeError"></p></span>
+<p></p>
+
+<div>
+Do you enjoy arcade and arcade-like establishments?
+<label>
+    <input type="radio" id="arcadeYES" name="arcade" value="yes"/>Yes
+</label>
+<label>
+    <input type="radio" id="arcadeNO" name="arcade" value="no"/>No
+</label>
+</div>
+<span class="error"><p id="arcadeError"></p></span>
+<p></p>
+
+<div>
+Do you prefer sit-down restaurant or fast-food type restaurant?
+<label>
+    <input type="radio" id="sitdown" value="sitdown"/>Sit Down
+</label>
+<label>
+    <input type="radio" id="fastfood" name="resturant" value="fastfood"/>Fast Food
+</label>
+</div>
+<span class="error"><p id="restaurantError"></p></span>
+<p></p>
+
+<div>
+Do you enjoy music concerts and music festivals?
+<label>
+    <input type="radio" id="concertsYES" value="yes"/>Yes
+</label>
+<label>
+    <input type="radio" id="concertsNO" value="no"/>No
+</label>
+</div>
+<span class="error"><p id="concertsError"></p></span>
+
+<p></p>
+<button type="button" onclick="createUserAccount()">Create Account</button>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+{
+    "name": "Scene",
+    "settings": {
+        "cmd": {},
+        "urlPrefixTemplate": "http://scenedev.local/",
+        "urlPrefix": "http://localhost/",
+        "exportPath": "/Volumes/ApacheData/scenedev.local/SceneUI",
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": false,
+        "spacesToIndent": "tab",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPhone",
+                "builtIn": true,
+                "height": 480,
+                "width": 320
+            },
+            "viewportOrientation": "portrait"
+        }
+    },
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "modern62",
+    "viewOrderMap": {
+        "view": [
+            "9c0494db-f7b1-4dfc-a5bb-df0a5850b41e",
+            "d1e41027-9cac-4bfa-8623-37a38da9126d",
+            "13ea6ff5-cf5d-4a98-ae27-3aaff6df0278",
+            "b7645eea-4454-44a5-84ea-53a579741811",
+            "d1e8e8c4-49bd-4f80-8c21-503bae786ff6",
+            "74f754e2-d4ae-4d1c-ad87-05a93c0606b1",
+            "8d4af1f4-7fe4-46f2-a66b-2009228608ff",
+            "83a23225-1b99-460b-97e1-9791a5cc3338",
+            "25358229-9aa9-4964-bb72-2f2db1326882",
+            "487b39b0-423c-403b-a7a8-302c4c6b55ae",
+            "a97d4f94-5b44-4377-b439-81e770c17132",
+            "006bd200-6c46-4183-9f11-003bc9dba24e",
+            "51c34cf8-bc16-4442-8413-76856aa488f0",
+            "b2109fd2-85fd-4433-8147-34c5095a4a1e",
+            "6c3fc7db-a07e-449f-8f0b-1663d859a7e7",
+            "d2699bc7-bf8a-48cd-9c68-fbeabd546b7c",
+            "ab0d1d5e-6791-47e5-b8dd-8a884036a567",
+            "be46c359-4677-4820-9820-bef99d43bc09",
+            "5328e755-f9d3-4cb2-9f56-3040c41b8307",
+            "b3997014-78fd-4318-a9ae-817930ec1444",
+            "e4d1ca58-f1be-4326-90ba-7fc08b0212fb"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "cb3e37ae-0015-4434-a3d0-cfc739aaffe5",
+            "f509321c-b24b-4206-9754-6a339655c30f",
+            "2c7f0bde-2820-4b05-96cb-43af90312766"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

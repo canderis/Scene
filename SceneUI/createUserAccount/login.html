@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<style>
+body{
+font-family:calibri}
+.error {
+color: #FF0000}
+</style>
+</head>
+
+<body>
+<h1>Login</h1>
+Enter your username and password.<br>
+Your username is your email.<br><br>
+<b>Don't have an account? Make one <a href="index.html">here!</a></b>
+<p></p>
+<span class="error"><p id="loginError"></p></span>
+
+<!--<form id="loginForm" action="login.php" method="post">-->
+Username: <input type="text" name="username" id="username" placeholder="xxx from xxx@test.com"></input><br>
+Password: <input type="password" name="password" id="password"></input><br>
+<button type="button" onclick="login()" id="login">Login</button>
+
+</body>
+
+<script>
+function login(){
+	document.getElementById("loginError").innerHTML = "";
+	var info = {username:document.getElementById("username").value, password: document.getElementById("password").value};
+	$.ajax({
+		url: "login.php",
+		method: 'POST',
+		dataType: 'json',
+			data: info,
+			success: function(data){
+				if(!data["success"]){
+					document.getElementById("loginError").innerHTML = "Incorrect username and password combination.";
+				}else{
+					alert("Login successful!");
+					window.location.href = "homepage.html";
+				}
+			},
+			error: function(data){
+				console.log(data);
+			}
+
+	});
+}
+</script>
+</html>

@@ -1,0 +1,135 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "profilecreationform",
+        "designer|userClassName": "ProfileCreationFormViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "b3997014-78fd-4318-a9ae-817930ec1444",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ProfileChoices"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyStore",
+            "designerId": "f683b15a-d896-4069-a2c1-80025dd7a99f",
+            "cn": [
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "id"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "field18",
+                    "designerId": "839bdea1-18eb-4a9f-a16d-bd753f46dc48"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "name"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "field19",
+                    "designerId": "cbcb5ad0-1703-4748-b3de-617453467bb6"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "indicator"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "field20",
+                    "designerId": "77167662-d1dc-49b4-a9c6-61589ebbbd91"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ProfileOptions"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyStore1",
+            "designerId": "828450a0-982e-400a-be6d-d1a5ab1baebd",
+            "cn": [
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "option"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "field21",
+                    "designerId": "e75a9b23-f8df-4b08-bf86-f7b833f0404e"
+                },
+                {
+                    "type": "Ext.data.field.Field",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "name": "optionId"
+                    },
+                    "configAlternates": {
+                        "name": "string"
+                    },
+                    "name": "field22",
+                    "designerId": "cb4cdda9-284c-4f4c-8781-1cd98151f1a9"
+                }
+            ]
+        }
+    ]
+}

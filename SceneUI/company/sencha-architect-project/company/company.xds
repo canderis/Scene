@@ -1,0 +1,57 @@
+{
+    "name": "company",
+    "settings": {
+        "cmd": {
+            "license": "",
+            "cmdVersion": "",
+            "frameworkVersion": ""
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:61427/",
+        "exportPath": "//192.168.152.200/data/ApacheData/scenedev.local/SceneUI/company",
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "spacesToIndent": "tab",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "installStatus": "Not Installed",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "sdkPath": ""
+    },
+    "xdsVersion": "4.1.2",
+    "xdsBuild": 188,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "ext62",
+    "viewOrderMap": {
+        "view": [
+            "ecfd8d6f-791d-469f-85a4-3fcf3b04e98f",
+            "f48a8749-4aba-4fd1-b137-da8ba8392b5d",
+            "e7180028-e480-4bbb-90d6-2e11d70fbc07",
+            "31a5c7a8-83f3-469c-a812-259075040f15",
+            "5ee6de27-7f70-4b9b-b88b-4afb94229514",
+            "6ae4abb7-6094-4383-b3e2-8a20c5f1ef77",
+            "9dd8f9dc-9383-4241-876e-18377ca2c216",
+            "0b12117f-cede-45d2-b9c1-0f7a9438da79",
+            "1a5dba50-aeb7-457f-9b89-0c442b74ad05"
+        ],
+        "store": [],
+        "controller": [],
+        "model": [],
+        "resource": [
+            "74e9dd93-e3a4-489f-a376-835beee62935",
+            "394f584c-7323-411e-9644-e010d56c9511"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

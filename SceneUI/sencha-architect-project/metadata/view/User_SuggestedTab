@@ -1,0 +1,187 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "user_suggestedtab",
+        "designer|userClassName": "User_SuggestedTab",
+        "layout": "fit"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "layout": "string"
+    },
+    "designerId": "b7645eea-4454-44a5-84ea-53a579741811",
+    "viewControllerInstanceId": "74f754e2-d4ae-4d1c-ad87-05a93c0606b1",
+    "viewModelInstanceId": "d1e8e8c4-49bd-4f80-8c21-503bae786ff6",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "scene"
+                ],
+                "fn": "addNewScene",
+                "implHandler": [
+                    "var store = this.getViewModel().getStore('SuggestedListStore');",
+                    "if(!store.findRecord('uniqueId',scene.uniqueId)){",
+                    "\tstore.loadData([scene], true);",
+                    "}",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "addNewScene",
+            "designerId": "d33e3802-0ea0-4126-a3ac-b547b119b3ec"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "scene"
+                ],
+                "fn": "removeScene",
+                "implHandler": [
+                    "var store = this.getViewModel().getStore('SuggestedListStore');",
+                    "",
+                    "store.remove(store.findRecord('uniqueId',scene.uniqueId));"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "removeScene",
+            "designerId": "c1880639-8f74-4a02-afa7-2129e53881c8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "suggestedList",
+                    "accountInfo"
+                ],
+                "fn": "loadSuggestedList",
+                "implHandler": [
+                    "//console.log('here', suggestedList);",
+                    "",
+                    "this.getViewModel().getStore( 'SuggestedListStore' ).loadData( suggestedList );",
+                    "//console.log(this.getViewModel().getStore( 'SuggestedListStore' ));",
+                    "this.accountInfo = accountInfo;"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "loadSuggestedList",
+            "designerId": "2b4e29c1-fd55-4f80-a219-441b1a9c998c"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "configAlternates": {
+                "docked": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "24e1133a-336a-4af8-949e-59472bd683fa",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": true,
+                        "html": "Scene"
+                    },
+                    "configAlternates": {
+                        "centered": "boolean",
+                        "html": "string"
+                    },
+                    "name": "MyLabel",
+                    "designerId": "2f0ce2cf-1a8f-4f87-a44b-2f6d8090a218"
+                }
+            ]
+        },
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "suggestedList",
+                "onItemDisclosure": "itemDisclosure",
+                "store": [
+                    "{SuggestedListStore}"
+                ]
+            },
+            "configAlternates": {
+                "store": "binding",
+                "itemId": "string",
+                "onItemDisclosure": "string"
+            },
+            "name": "MyList",
+            "designerId": "c229d578-ee8a-4c09-a882-81859cb25fde",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>{name} - {distance}{distanceUnit}</div>"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "itemTpl",
+                    "designerId": "4a5d1ac0-38a4-4af2-87a1-e2d1642c8022"
+                }
+            ]
+        }
+    ]
+}

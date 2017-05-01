@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class yelp_api</title>
+
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-api_base_class.html">api_base_class</a></li>
+				<li><a href="class-bandsintown_api.html">bandsintown_api</a></li>
+				<li><a href="class-mapquest_api.html">mapquest_api</a></li>
+				<li><a href="class-Scene.html">Scene</a></li>
+				<li class="active"><a href="class-yelp_api.html">yelp_api</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class yelp_api</h1>
+
+
+	<div class="description">
+	<p>Yelp API Class
+Contains functions and constructor
+related to the Yelp API searches.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-api_base_class.html"><span>api_base_class</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>yelp_api</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+				<b>Author:</b>
+				Sydney Ehlinger<br>
+			<b>Located at</b> <a href="source-class-yelp_api.html#8-177" title="Go to source code">api_classes/yelp_api.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-yelp_api.html#30-41" title="Go to source code">__construct</a>( <span>integer <var>$latitude</var></span>, <span>integer <var>$longitude</var></span> )</code>
+
+		<div class="description short">
+			<p>Constructor is first called when the yelp_api is called
+Calls prep_api_array to prepare raw_data_object. See api_base_class.php for more info
+Calls yelp_search</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Constructor is first called when the yelp_api is called
+Calls prep_api_array to prepare raw_data_object. See api_base_class.php for more info
+Calls yelp_search</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$latitude</var></dt>
+					<dd>latitude</dd>
+					<dt><var>$longitude</var></dt>
+					<dd>longitude</dd>
+				</dl></div>
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Sydney Ehlinger<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="prep_api_array" id="_prep_api_array">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prep_api_array">#</a>
+		<code><a href="source-class-yelp_api.html#43-91" title="Go to source code">prep_api_array</a>( )</code>
+
+		<div class="description short">
+			<p>Function that prepares raw data and puts it into a prepped array. Takes
+the address elements and parses them into a key that will be used to
+represent an event or location, in an associative array. Then adds each
+element that is deemed important inside of the array with its own key.
+Different cases may be used depending upon the what api requires
+Nothing is returned or taken as parameters, just modified.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that prepares raw data and puts it into a prepped array. Takes
+the address elements and parses them into a key that will be used to
+represent an event or location, in an associative array. Then adds each
+element that is deemed important inside of the array with its own key.
+Different cases may be used depending upon the what api requires
+Nothing is returned or taken as parameters, just modified.</p>
+
+
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Kevin Mathes<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="yelp_search" id="_yelp_search">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_yelp_search">#</a>
+		<code><a href="source-class-yelp_api.html#94-109" title="Go to source code">yelp_search</a>( <span>integer <var>$latitude</var></span>, <span>integer <var>$longitude</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that performs a Yelp Search. Takes in the latitude and longitude of a location and appends it to the url
+Calls yelp_request</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that performs a Yelp Search. Takes in the latitude and longitude of a location and appends it to the url
+Calls yelp_request</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$latitude</var></dt>
+					<dd>latitude</dd>
+					<dt><var>$longitude</var></dt>
+					<dd>longitude</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>Json format of data
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Sydney Ehlinger<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLocationFromLadLong" id="_getLocationFromLadLong">
+
+		<td class="attributes"><code>
+			 private 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLocationFromLadLong">#</a>
+		<code><a href="source-class-yelp_api.html#111-126" title="Go to source code">getLocationFromLadLong</a>( <span>integer <var>$latitude</var></span>, <span>integer <var>$longitude</var></span> )</code>
+
+		<div class="description short">
+			<p>Function get location based off of latitude and longitude.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function get location based off of latitude and longitude.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$latitude</var></dt>
+					<dd>latitude</dd>
+					<dt><var>$longitude</var></dt>
+					<dd>longitude</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>location
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Sydney Ehlinger<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="yelp_request" id="_yelp_request">
+
+		<td class="attributes"><code>
+			 private 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_yelp_request">#</a>
+		<code><a href="source-class-yelp_api.html#128-175" title="Go to source code">yelp_request</a>( <span>string <var>$path</var></span> )</code>
+
+		<div class="description short">
+			<p>Function that creates a Yelp Request which checks the keys and authorizes the search.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Function that creates a Yelp Request which checks the keys and authorizes the search.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$path</var></dt>
+					<dd>of url that constains the latitude and longitude of the location.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>json of data
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Sydney Ehlinger<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-api_base_class.html#methods">api_base_class</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-api_base_class.html#_get_prepped_data_array">get_prepped_data_array()</a>, 
+			<a href="class-api_base_class.html#_httpGet">httpGet()</a>, 
+			<a href="class-api_base_class.html#_mergeApiArrays">mergeApiArrays()</a>, 
+			<a href="class-api_base_class.html#_stripExtraCharacters">stripExtraCharacters()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="CONSUMER_KEY" id="$CONSUMER_KEY">
+		<td class="attributes"><code>
+			private  
+			<code><a href="class-yelp_api.html#$CONSUMER_KEY">yelp_api::<var>$CONSUMER_KEY</var></a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-yelp_api.html#16-24" title="Go to source code"><var>$CONSUMER_KEY</var></a>
+
+			<div class="description short">
+				<p>Variable keys are used for authorization of the user's api call</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Variable keys are used for authorization of the user's api call</p>
+
+					<h4>Author</h4>
+					<div class="list">
+							Sydney Ehlinger<br>
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$CONSUMER_KEY" class="anchor">#</a>
+				<code><span class="php-quote">'VLtyFlbeDJ-L1EOwg6tc_Q'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="CONSUMER_SECRET" id="$CONSUMER_SECRET">
+		<td class="attributes"><code>
+			private  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-yelp_api.html#25" title="Go to source code"><var>$CONSUMER_SECRET</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$CONSUMER_SECRET" class="anchor">#</a>
+				<code><span class="php-quote">'fjW_tfDRTrTAYTs3IepOu6CYBWY'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="TOKEN" id="$TOKEN">
+		<td class="attributes"><code>
+			private  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-yelp_api.html#26" title="Go to source code"><var>$TOKEN</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$TOKEN" class="anchor">#</a>
+				<code><span class="php-quote">'-_f8dQCu58m3c0sO5T13cAuNZAzcA8Vi'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="TOKEN_SECRET" id="$TOKEN_SECRET">
+		<td class="attributes"><code>
+			private  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-yelp_api.html#27" title="Go to source code"><var>$TOKEN_SECRET</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$TOKEN_SECRET" class="anchor">#</a>
+				<code><span class="php-quote">'bLTTPaolUb21UgL-RrUzymjDp5k'</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="GOOGLE_API_KEY" id="$GOOGLE_API_KEY">
+		<td class="attributes"><code>
+			private  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-yelp_api.html#28" title="Go to source code"><var>$GOOGLE_API_KEY</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$GOOGLE_API_KEY" class="anchor">#</a>
+				<code><span class="php-quote">'AIzaSyBUJTyWW1pV9RLDQ8xW78jtW4nBXASUyac'</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-api_base_class.html#properties">api_base_class</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-api_base_class.html#$prepped_data_array"><var>$prepped_data_array</var></a>, 
+			<a href="class-api_base_class.html#$raw_data_object"><var>$raw_data_object</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

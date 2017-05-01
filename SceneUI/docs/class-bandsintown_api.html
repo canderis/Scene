@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class bandsintown_api</title>
+
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-api_base_class.html">api_base_class</a></li>
+				<li class="active"><a href="class-bandsintown_api.html">bandsintown_api</a></li>
+				<li><a href="class-mapquest_api.html">mapquest_api</a></li>
+				<li><a href="class-Scene.html">Scene</a></li>
+				<li><a href="class-yelp_api.html">yelp_api</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class bandsintown_api</h1>
+
+
+	<div class="description">
+	<p>api_base_class.php
+api_base_class is an abstract class that provides helper funtions used for talking to various APIs and
+defines functions Scene.php relies on existing for prepairing a data object for the client.</p>
+
+<p>This was created to modularize the API calls, allowing them to be added easier without breaking existing code
+or requiring extensive modification.</p>
+
+<p>The construct funtion should prepare the $raw_data_object before the prep_api_array is called.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-api_base_class.html"><span>api_base_class</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>bandsintown_api</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+				<b>Author:</b>
+				Scott Huffman.<br>
+			<b>Located at</b> <a href="source-class-bandsintown_api.html#4-26" title="Go to source code">api_classes/bandsintown_api.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-bandsintown_api.html#6-10" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="prep_api_array" id="_prep_api_array">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_prep_api_array">#</a>
+		<code><a href="source-class-bandsintown_api.html#12-15" title="Go to source code">prep_api_array</a>( )</code>
+
+		<div class="description short">
+			<p>this function is called by the constructor.
+this function should prepare the associative array, mapped using the address, with the relevant data.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>this function is called by the constructor.
+this function should prepare the associative array, mapped using the address, with the relevant data.</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="bandintownSearch" id="_bandintownSearch">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_bandintownSearch">#</a>
+		<code><a href="source-class-bandsintown_api.html#18-22" title="Go to source code">bandintownSearch</a>( <span> <var>$location</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-api_base_class.html#methods">api_base_class</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-api_base_class.html#_get_prepped_data_array">get_prepped_data_array()</a>, 
+			<a href="class-api_base_class.html#_httpGet">httpGet()</a>, 
+			<a href="class-api_base_class.html#_mergeApiArrays">mergeApiArrays()</a>, 
+			<a href="class-api_base_class.html#_stripExtraCharacters">stripExtraCharacters()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-api_base_class.html#properties">api_base_class</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-api_base_class.html#$prepped_data_array"><var>$prepped_data_array</var></a>, 
+			<a href="class-api_base_class.html#$raw_data_object"><var>$raw_data_object</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+apigen generate -s ./SceneController -d ./SceneUI/docs --exclude="/YelpAuth" --tree --access-levels=["public","private"]

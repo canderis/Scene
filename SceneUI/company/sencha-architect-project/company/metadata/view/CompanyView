@@ -1,0 +1,205 @@
+{
+    "type": "Ext.container.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "companyview",
+        "designer|userClassName": "CompanyView",
+        "height": "100%",
+        "layout": "fit",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "width": "auto"
+    },
+    "name": "MyContainer",
+    "designerId": "31a5c7a8-83f3-469c-a812-259075040f15",
+    "viewControllerInstanceId": "6ae4abb7-6094-4383-b3e2-8a20c5f1ef77",
+    "viewModelInstanceId": "5ee6de27-7f70-4b9b-b88b-4afb94229514",
+    "cn": [
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 0.25
+            },
+            "configAlternates": {
+                "flex": "number"
+            },
+            "name": "MyContainer2",
+            "designerId": "13633aa8-fa2c-4ded-98a3-2248b3ba396b",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Create event"
+                    },
+                    "configAlternates": {
+                        "text": "string"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "2c712ee1-f5e5-4cdc-8dc9-39ee5d2fdf8e"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": "25%",
+                        "width": "25%"
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "width": "auto"
+                    },
+                    "name": "MyContainer1",
+                    "designerId": "275e62a7-4081-4b30-9bcf-94b304037396",
+                    "cn": [
+                        {
+                            "type": "Ext.form.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "To search for an event, enter the name and address"
+                            },
+                            "configAlternates": {
+                                "text": "string"
+                            },
+                            "name": "MyLabel",
+                            "designerId": "d63e0f3a-c9d7-4ed8-aee7-2c88c9c71b26"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Name",
+                        "itemId": "locationName"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField2",
+                    "designerId": "ba1873db-85cb-4e80-b68c-73dbfb654eaa"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Address",
+                        "itemId": "locationAddress"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "itemId": "string"
+                    },
+                    "name": "MyTextField3",
+                    "designerId": "3135cdcc-beae-44ff-a215-1eb7a80b94b0"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "text": "Search"
+                    },
+                    "configAlternates": {
+                        "text": "string"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "37bb6869-8b91-4de7-87dc-2f483406f3d2",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "    AERP.Ajax.request({",
+                                    "    url:'/SceneRequest/handleCompanySearch',",
+                                    "    params: {",
+                                    "        locationName: this.queryById('locationName').getValue(),",
+                                    "        locationAddress: this.queryById('locationAddress').getValue(),",
+                                    "    },",
+                                    "    success:function(response) {",
+                                    "        console.log(response);",
+                                    "    },",
+                                    "    failure:function(response) {",
+                                    "",
+                                    "    },",
+                                    "    scope:this",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonClick",
+                            "designerId": "4734de7c-3dce-4662-a6e1-d31f3ad1519f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "flex": 1
+            },
+            "configAlternates": {
+                "flex": "number"
+            },
+            "name": "MyContainer3",
+            "designerId": "1fe6d56a-a6b6-4214-abab-5e67bedeaec1"
+        }
+    ]
+}
