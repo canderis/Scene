@@ -1,1 +1,3 @@
-server-root-code is the code that lives on the root of the server. Handles routing to the pieces of the app.
+A project worked on for Computer Science class 309 at Iowa State University.
+
+Created by Scott Huffman, Sydney Ehlinger, Kevin Mathes and Eva Kuntz
